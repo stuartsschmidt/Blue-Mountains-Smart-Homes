@@ -1,3 +1,12 @@
+body.about-page {
+  background: url('static/images/about.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+.property-btn {
+  position: relative;
+  z-index: 2;
+  pointer-events: auto;
+}
 .property-cards-row {
   display: flex !important;
   flex-direction: row !important;
