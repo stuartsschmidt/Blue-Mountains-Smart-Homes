@@ -1,0 +1,16 @@
+/* Enhanced main title style */
+h1 {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-weight: 900;
+  color: #0078d7;
+  font-size: 3.2rem;
+  letter-spacing: 3px;
+  text-shadow: 0 8px 32px #0078d799, 0 2px 0 #fff, 0 1px 0 #005fa333;
+  margin: 2.8rem 0 1.6rem 0;
+  text-align: center;
+  line-height: 1.08;
+  padding: 0.5rem 0;
+  border-radius: 12px;
+  background: rgba(0,120,215,0.06);
+  box-shadow: 0 4px 24px rgba(0,120,215,0.08);
+}
