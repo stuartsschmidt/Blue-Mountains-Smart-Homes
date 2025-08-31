@@ -476,7 +476,7 @@ nav a {
   font-size: 1.15rem;
   padding: 0.5rem 1.2rem;
   border-radius: 24px;
-  background: linear-gradient(270deg, #ffd700 0%, #d7263d 20%, #ff6f61 40%, #a259c6 60%, #4f8cff 80%, #ffd700 100%);
+  background: #4fbcff;
   box-shadow: 0 2px 12px 2px rgba(255,215,0,0.18), 0 0 16px 2px rgba(162,89,198,0.12);
   position: relative;
   overflow: hidden;
@@ -558,7 +558,7 @@ section h2 {
   font-size: 3.2rem;
   font-weight: bold;
   color: #fff;
-  background: linear-gradient(270deg, #ffd700 0%, #d7263d 10%, #ff6fcb 30%, #a259c6 55%, #4f8cff 80%, #ffd700 100%);
+  background: #4fbcff;
   border: none;
   border-radius: 80px;
   box-shadow: 0 20px 80px 16px #ffd700, 0 0 80px 24px #a259c6, 0 0 48px 16px #fff7b2, 0 0 0 8px #fff7b2 inset;
@@ -588,7 +588,7 @@ section h2 {
 .flashy-book-btn:hover {
   transform: scale(1.16) rotate(-2deg);
   box-shadow: 0 32px 128px 32px #ffd700, 0 0 128px 48px #a259c6, 0 0 64px 24px #fff7b2, 0 0 0 16px #fff7b2 inset;
-  background: linear-gradient(90deg, #ffd700 0%, #ff6fcb 25%, #4f8cff 60%, #a259c6 90%, #d7263d 100%);
+  background: #0099e6;
   color: #ffd700;
   filter: drop-shadow(0 0 64px #ffd700) drop-shadow(0 0 32px #a259c6);
 }
