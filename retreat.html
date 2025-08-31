@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wollemi Smart Retreat</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .slideshow-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+        }
+        .slideshow-bg img {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            filter: brightness(1.45) saturate(1.25);
+        }
+        .slideshow-bg img.active {
+            opacity: 1;
+        }
+        .palace-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2em 1em;
+            background: rgba(0,0,0,0.5);
+            border-radius: 16px;
+            color: #fff;
+            box-shadow: 0 4px 32px rgba(0,0,0,0.4);
+        }
+        .palace-title {
+            text-align: center;
+            font-size: 2.8em;
+            margin-bottom: 1.2em;
+            color: #42a5f5;
+            text-shadow: 2px 2px 8px #000;
+            letter-spacing: 2px;
+        }
+        .palace-nav {
+            text-align: center;
+            margin-bottom: 2em;
+        }
+        .palace-nav a {
+            margin: 0 1em;
+            color: #fff;
+            text-decoration: underline;
+            font-weight: bold;
+            font-size: 1.15em;
+            padding: 0.3em 0.8em;
+            border-radius: 6px;
+            transition: background 0.2s, color 0.2s;
+            background: rgba(66,165,245,0.85);
+            box-shadow: 0 2px 8px rgba(66,165,245,0.08);
+        }
+        .palace-nav a:hover, .palace-nav a:focus {
+            background: #1565c0;
+            color: #fff;
+            text-decoration: none;
+        }
+        .room {
+            margin-bottom: 2.5em;
+        }
+        .room h2 {
+            margin: 0 0 0.5em 0;
+            font-size: 2em;
+            color: #42a5f5;
+        }
+        .room p {
+            margin: 0 0 0.5em 0;
+            font-size: 1.1em;
+        }
+        @media (max-width: 600px) {
+            .palace-content { padding: 1em 0.2em; }
+            .room h2 { font-size: 1.3em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-bg">
+        <img src="static/images/1.jpg" class="active" alt="1">
+        <img src="static/images/2.jpg" alt="2">
+        <img src="static/images/3.jpg" alt="3">
+        <img src="static/images/4.jpg" alt="4">
+        <img src="static/images/5.jpg" alt="5">
+        <img src="static/images/6.jpg" alt="6">
+        <img src="static/images/7.jpg" alt="7">
+        <img src="static/images/8.jpg" alt="8">
+        <img src="static/images/9.jpg" alt="9">
+        <img src="static/images/10.jpg" alt="10">
+        <img src="static/images/11.jpg" alt="11">
+        <img src="static/images/12.jpg" alt="12">
+        <img src="static/images/13.jpg" alt="13">
+        <img src="static/images/14.jpg" alt="14">
+    </div>
+    <div class="palace-content">
+        <h1 class="palace-title">The Wollemi Smart Retreat</h1>
+        <nav class="palace-nav">
+            <a href="#">Book Direct</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="index.html">Home</a>
+            <a href="#">Gallery</a>
+            <a href="#">Reviews</a>
+        </nav>
+        <div class="room">
+            <h2>King Room</h2>
+            <p>Step into the King Room and unwind in style. Sink into a luxurious king-size bed with heated blankets and a plush mattress protector, ensuring a restful night's sleep. Enjoy your favorite shows on the Smart Samsung TV, set the perfect mood with smart lighting and voice control, and stay connected with USB and wireless charging at your fingertips. Plantation shutters offer privacy and natural light, while fresh linens and electric bedside tables add a touch of elegance. The King Room is your private haven for relaxation and comfort.</p>
+        </div>
+        <div class="room">
+            <h2>Queen Room</h2>
+            <p>Relax in the Queen Room, where comfort meets modern convenience. The centerpiece is a queen-sized TV bed with remote control and built-in Bluetooth speakers, perfect for unwinding with your favorite entertainment. Heated blankets, a mattress protector, and quality linen ensure a cozy stay. Enjoy the Android TCL Smart TV, Google Mini, and effortless charging with USB and wireless options. Plantation shutters provide privacy and natural light, while electric bedside tables and smart lighting with voice control add a touch of luxury. A private ensuite completes this inviting retreat.</p>
+        </div>
+        <div class="room">
+            <h2>Kids Room</h2>
+            <p>The Kids Room is a fun and comfortable space featuring bunk beds and two single beds, each with USB charging and electric blankets for a cozy night’s sleep. The room has smart lighting, plantation shutters for privacy and natural light, a fold-out desk and chair for activities or study, colorful Nanoleaf tiles for creative lighting, a toy box for playtime, and electric bedside tables with lights and USB charging. Google Mini and voice control make the room both smart and playful—perfect for young guests to relax and enjoy.</p>
+        </div>
+        <div class="room">
+            <h2>Living Room</h2>
+            <p>Step into the living room and experience the perfect blend of comfort and technology. Sink into a luxurious three-seater electric recliner, complete with built-in lighting, Bluetooth speakers, and both wireless and USB charging for your devices. Two single electric recliners also feature built-in lighting and USB charging for added convenience. Enjoy stunning visuals on the Samsung Smart Frame TV, or transform movie nights with a 100-inch projector screen and Samsung smart projector. Plantation shutters add elegance and privacy, while voice-controlled lights and curtains, plus a Google Mini, let you set the perfect mood with ease. This is your space to relax, entertain, and feel at home.</p>
+        </div>
+        <div class="room">
+            <h2>Kitchen</h2>
+            <p>Step into a kitchen designed for both creativity and comfort. A large serving window opens the space to the outdoors, while engineered stone bench tops provide a stylish and durable workspace. Prepare meals with ease using modern appliances: oven, fridge with plumbed-in ice maker and chilled water dispenser (just fill the tank), microwave, coffee machine, toaster, kettle, and dishwasher. Choose from 3–4 ways to make your perfect coffee. Enjoy thoughtful touches like a built-in dishwashing soap dispenser, sensor tap, and motion-sensor bins for effortless clean-up. Smart lighting, Google Mini, and voice or remote-controlled electric blinds bring convenience and ambiance to every moment. All cookware, utensils, and cooking basics are ready for you—just bring your appetite and enjoy!</p>
+        </div>
+        <div class="room">
+            <h2>Dining Room</h2>
+            <p>Share delicious meals and great conversation in the inviting dining room. A spacious table and plush seating create the perfect setting for family feasts or friendly gatherings. Set the mood with music or get help from the Google Mini, and enjoy effortless control of the smart lighting and electric curtain—just use your voice or the remote. For families, a high chair is ready for your youngest guest. This is a space designed for comfort, connection, and memorable moments together.</p>
+        </div>
+        <div class="room">
+            <h2>Bathroom</h2>
+            <p>Indulge in a spa-like experience in the main bathroom. Enjoy a smart toilet with heated seat, bidet, and remote control for easy use. Refresh in the voice-controlled Moen smart shower, or use the intuitive control panel for hands-on operation. The large, deep bath features relaxing jets for the perfect soak. The room offers two light settings, smart lighting, heaters, and a sensor tap for added comfort and convenience, while a smart electric mirror, hair dryer, and ample power points make getting ready a breeze. Bathmats, hand towels, and basic shampoo, soap, and body wash are all provided for your stay.</p>
+        </div>
+        <div class="room">
+            <h2>Ensuite</h2>
+            <p>The ensuite is a private sanctuary featuring a versatile shower with four different outputs for a personalized experience. You'll find body wash, shampoo, conditioner, and soap provided for your comfort, along with a hair dryer and a smart electric mirror. The sensor tap makes freshening up easy, while floor mats and hand towels add a touch of luxury. Plantation shutters offer privacy and natural light. Use the Google Mini for voice control of the lights, heatlamps, and exhaust fan, making your stay both relaxing and convenient.</p>
+        </div>
+        <div class="room">
+            <h2>Parking</h2>
+            <p>Off-street parking is available for guests, with easy access to the retreat. Standard power points are provided for EV charging. Please ensure vehicles are locked and valuables are kept secure.</p>
+        </div>
+        <div class="room">
+            <h2>Veranda</h2>
+            <p>Step out onto the inviting veranda, where comfort and convenience meet the outdoors. A large serving window connects directly to the kitchen, making it easy to share food and drinks with guests outside. Relax in comfortable seating with beautiful garden views, or fire up the BBQ—complete with a rotisserie feature, built-in lights, and USB charging—for memorable alfresco meals. Whether you’re enjoying a quiet morning coffee or hosting an evening gathering, the veranda is the perfect spot to soak up the fresh air and peaceful surroundings.</p>
+        </div>
+        <div class="room">
+            <h2>Pet Friendly</h2>
+            <p>Your pets are truly welcome at the retreat! Pet bowls are provided for your furry friends, and there is easy access to outdoor areas for walks and fresh air. Please supervise pets at all times and bring any bedding or other items your pet may need to feel comfortable during your stay.</p>
+        </div>
+        <div style="text-align:center; margin:3em 0 2em 0;">
+        <div class="room">
+            <h2>Please Note</h2>
+            <p>We’re super proud of our smart house and all the cool things it can do! But don’t worry—if high-tech isn’t your thing, or you’re just here to make the kids happy, you can still use everything the good old-fashioned way. Voice control is totally optional, and every feature works with regular switches and buttons too. So relax, have fun, and enjoy your stay—your way!</p>
+        </div>
+            <a href="#" style="display:inline-block; background:#42a5f5; color:#fff; font-size:2em; font-weight:bold; padding:1em 2.5em; border-radius:12px; text-decoration:none; box-shadow:0 4px 16px rgba(0,0,0,0.18); letter-spacing:1px; transition:background 0.2s;">Book Direct</a>
+        </div>
+    </div>
+    <script>
+        const images = document.querySelectorAll('.slideshow-bg img');
+        let current = 0;
+        setInterval(() => {
+            images[current].classList.remove('active');
+            current = (current + 1) % images.length;
+            images[current].classList.add('active');
+        }, 3500);
+    </script>
+</body>
+</html>
