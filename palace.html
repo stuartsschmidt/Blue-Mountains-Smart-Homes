@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wollemi Smart Palace</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .slideshow-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+        }
+        .slideshow-bg img {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            filter: brightness(1.45) saturate(1.25);
+        }
+        .slideshow-bg img.active {
+            opacity: 1;
+        }
+        .palace-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2em 1em;
+            background: rgba(0,0,0,0.5);
+            border-radius: 16px;
+            color: #fff;
+            box-shadow: 0 4px 32px rgba(0,0,0,0.4);
+        }
+        .room {
+            margin-bottom: 2.5em;
+        }
+        .room h2 {
+            margin: 0 0 0.5em 0;
+            font-size: 2em;
+            color: #42a5f5;
+        }
+        .room p {
+            margin: 0 0 0.5em 0;
+            font-size: 1.1em;
+        }
+        @media (max-width: 600px) {
+            .palace-content { padding: 1em 0.2em; }
+            .room h2 { font-size: 1.3em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-bg">
+    <img src="static/images/veranda.jpg" class="active" alt="Veranda">
+    <img src="static/images/spa.jpg" alt="Spa">
+    <img src="static/images/queen.jpg" alt="Queen Room">
+    <img src="static/images/petarea.jpg" alt="Pet Area">
+    <img src="static/images/king.jpg" alt="King Room">
+    <img src="static/images/jester.jpg" alt="Jester Room">
+    <img src="static/images/backentry.jpg" alt="Back Entry">
+    <img src="static/images/entry.jpg" alt="Entry">
+    <img src="static/images/kd.jpg" alt="Kitchen and Dining">
+    <img src="static/images/living.jpg" alt="Living Room">
+    <img src="static/images/nightdeck.jpg" alt="Night Deck">
+    <img src="static/images/nightgarden.jpg" alt="Night Garden">
+    </div>
+    <div class="palace-content">
+    <h1 class="palace-title" style="text-align:center; font-size:2.8em; margin-bottom:1.2em; color:#42a5f5; text-shadow:2px 2px 8px #000; letter-spacing:2px;">The Wollemi Smart Palace</h1>
+        <nav class="palace-nav" style="text-align:center; margin-bottom:2em;">
+            <a href="#" style="margin:0 1em; color:#fff; text-decoration:underline; font-weight:bold;">Book Direct</a>
+            <a href="about.html" style="margin:0 1em; color:#fff; text-decoration:underline; font-weight:bold;">About</a>
+            <a href="contact.html" style="margin:0 1em; color:#fff; text-decoration:underline; font-weight:bold;">Contact</a>
+            <a href="index.html" style="margin:0 1em; color:#fff; text-decoration:underline; font-weight:bold;">Home</a>
+            <a href="#" style="margin:0 1em; color:#fff; text-decoration:underline; font-weight:bold;">Gallery</a>
+            <a href="#" style="margin:0 1em; color:#fff; text-decoration:underline; font-weight:bold;">Reviews</a>
+        </nav>
+        <div class="room">
+            <h2>King Room</h2>
+            <p>Spacious master suite with a king-size bed, luxury linens, closet space, and direct access to the spa room. Features include a smart 55-inch Samsung Frame TV, ensuite, Google Mini, plantation shutters, smart curtain, heater blankets, smart light, and ducted heating.</p>
+        </div>
+        <div class="room">
+            <h2>Queen Room</h2>
+            <p>Comfortable guest room with a queen-sized, voice-controlled TV bed featuring a built-in Samsung smart TV. Includes smart lighting, Google Mini, heater blankets, mattress protector, quality linen, ducted heating, plantation shutters, USB charging ports, and access to a shared ensuite.</p>
+        </div>
+        <div class="room">
+            <h2>Jester Room</h2>
+            <p>Room features electric remote-controlled lift beds, playful decor, and interactive wall art. Includes smart RGB remote and voice-controlled lighting, Google Mini, heater blankets, mattress protectors, quality linens, a smart Samsung TV, and views of the gardens and Wollemi pines. Plantation shutters and access to a shared ensuite are also provided.</p>
+        </div>
+        <div class="room">
+            <h2>Living Room</h2>
+            <p>Home to two electric recliner lounges with built-in lighting and USB charging ports, a large 85-inch Samsung Frame TV, and a premium sound bar. Features voice and remote control curtains, board games, voice control smart lighting, ducted heating, open-plan layout, Google Mini, and throw blankets provided for comfort.</p>
+        </div>
+        <div class="room">
+            <h2>Kitchen and Dining</h2>
+            <p>This modern kitchen and dining space is designed for both convenience and style. Enjoy meals at a table for six, with all utensils, cookware, and cooking essentials provided. The kitchen is equipped with an oven, fridge featuring a built-in ice machine, Smeg coffee machine, toaster, kettle, rice cooker, air fryer, and a sensor tap. Choose from three different coffee-making options to suit your taste. Additional highlights include an elegant chandelier, smart lighting, dishwasher, microwave, engineered stone benchtops, Google Mini, and electric blinds that can be controlled by voice or remote.</p>
+        </div>
+        <div class="room">
+            <h2>King Ensuite</h2>
+            <p>The King Ensuite features a smart toilet with heated seat, bidet, and remote for easy use. Enjoy both a smart voice-controlled shower and a second manual shower, plus a sensor tap and a smart electric mirror. Additional comforts include smart lighting, a heater, plantation shutter, Google Mini, bathmats, and hand towels. One towel is provided per guest.</p>
+        </div>
+        <div class="room">
+            <h2>Shared Ensuite</h2>
+            <p>The Shared Ensuite is thoughtfully equipped for comfort and convenience. It features a smart toilet with heated seat, bidet, and remote, smart lighting, a heater, plantation shutter, Google Mini, sensor tap, and a smart electric mirror. The highlight is a generously sized shower, spacious enough for two people to enjoy. Bathmats and hand towels are provided, with one towel supplied per guest.</p>
+        </div>
+        <div class="room">
+            <h2>Spa Room</h2>
+            <p>The private spa room features a luxurious 6-person Lucania spa with digital controls, dual functions, 64 jets, and built-in lighting. Enjoy smart mood lighting throughout the room and a clear see-through roof for a unique experience. Additional amenities include a Google Mini, tiled floor with non-slip mats, plenty of towel hooks, a sink, tap, and a hot water hose.</p>
+        </div>
+        <div class="room">
+            <h2>Veranda</h2>
+            <p>The open-air veranda offers a fantastic outdoor dining experience with a weatherproof dining table and chairs, all set against great views of the garden. Elegant glass handrails enhance the outlook, ensuring uninterrupted vistas while you relax or dine. Enjoy cooking on the four-burner stainless steel BBQ, complete with a plumbed-in sink (hot and cold water), rotisserie, and wok burner. There’s also a wood fire slow cooker, perfect for making pizzas. Outdoor lighting completes this inviting space.</p>
+        </div>
+        <div class="room">
+            <h2>Court Yard</h2>
+            <p>The courtyard is a tranquil retreat designed for relaxation and atmosphere. Enjoy comfortable seating around a fire pit, with garden lighting that sets the perfect mood. Unique features include a striking rock dome structure, a sandstone-paved floor, rock walls, and an altar-style bench. Privacy and ambiance are enhanced by thoughtful mood lighting, making this a wonderful spot to unwind or enjoy quiet conversation.</p>
+        </div>
+        <div class="room">
+            <h2>Parking</h2>
+            <p>Off-street parking is available, with standard power points provided for charging vehicles. External security cameras are in place for safety, but no responsibility is taken for vehicles or belongings. Please ensure you lock your car and keep personal items secure.</p>
+        </div>
+        <div class="room">
+            <h2>Pet Area</h2>
+            <p>The pet area is fully fenced for safety and features a lockable, sheltered room. The entire area is covered with an artificial grass floor, providing a comfortable and clean surface for pets. Pets have access to feeding bowls, easy access to fresh water, and comfortable kennels and dog houses within the space.</p>
+        </div>
+        <div class="room">
+            <h2>Laundry</h2>
+            <p>The laundry is located in the spa room and features a Samsung smart washer-dryer combo situated below a timber bench with a built-in sink and sensor tap. Basic washing powder is provided for your convenience.</p>
+        </div>
+        <div class="room">
+    <h2>Wollemi Pine Trees and Gardens</h2>
+    <p>The gardens are home to the rare and ancient Wollemi pine trees, one of the world’s oldest and most significant plant species. Thought to be extinct until their rediscovery in 1994, Wollemi pines are living fossils dating back over 200 million years. Their survival is of great scientific and conservation importance, and they are protected by strict regulations. The landscaped gardens also feature a variety of native plants.<br><br>
+For the health and preservation of these unique trees, please do not enter the garden beds or allow pets and animals near the Wollemi pines. Respecting these guidelines helps ensure the continued survival of this remarkable species for future guests to enjoy and appreciate.</p>
+        </div>
+        <div style="text-align:center; margin:3em 0 2em 0;">
+            <a href="#" style="display:inline-block; background:#42a5f5; color:#fff; font-size:2em; font-weight:bold; padding:1em 2.5em; border-radius:12px; text-decoration:none; box-shadow:0 4px 16px rgba(0,0,0,0.18); letter-spacing:1px; transition:background 0.2s;">Book Direct</a>
+        </div>
+        </div>
+    </div>
+    <script>
+        const images = document.querySelectorAll('.slideshow-bg img');
+        let current = 0;
+        setInterval(() => {
+            images[current].classList.remove('active');
+            current = (current + 1) % images.length;
+            images[current].classList.add('active');
+        }, 3500);
+    </script>
+</body>
+</html>
