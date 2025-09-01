@@ -624,6 +624,61 @@ footer {
   box-shadow: 0 -2px 12px rgba(0,0,0,0.10);
 }
 
+.reviews-summary {
+  max-width: 900px;
+  margin: 2.5em auto 1.5em auto;
+  background: rgba(255,255,255,0.98);
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  padding: 2em 1.5em 1.5em 1.5em;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2em;
+}
+.reviews-summary-col {
+  flex: 1;
+  min-width: 220px;
+}
+.reviews-summary-title {
+  color: #1565c0;
+  font-size: 2.1em;
+  margin: 0 0 0.5em 0;
+}
+.reviews-summary-average {
+  font-size: 1.3em;
+  color: #1976d2;
+  font-weight: 600;
+  margin-bottom: 0.3em;
+}
+.reviews-summary-average .star {
+  color: #ffd700;
+  font-size: 1.1em;
+}
+.reviews-summary-count {
+  color: #888;
+  font-size: 1.05em;
+}
+.reviews-summary-breakdown-label {
+  margin-bottom: 0.7em;
+  font-weight: 500;
+  color: #1976d2;
+}
+.reviews-summary-breakdown-row {
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  margin-bottom: 0.3em;
+}
+.reviews-summary-breakdown-row span {
+  width: 2.5em;
+}
+.reviews-summary-breakdown-row .count {
+  color: #888;
+}
+.reviews-summary-breakdown-row progress {
+  width: 120px;
+}
 @media (max-width: 700px) {
   main {
     padding: 1rem;

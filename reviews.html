@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guest Reviews - Blue Mountains Smart Homes</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: url('static/images/76.jpg') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #222;
+    }
+    .reviews-container {
+      max-width: 900px;
+      margin: 2.5em auto;
+      background: rgba(255,255,255,0.96);
+      border-radius: 18px;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+      padding: 2.5em 1.5em 2em 1.5em;
+    }
+    h1 {
+      text-align: center;
+      color: #1565c0;
+      margin-bottom: 1.5em;
+    }
+    .reviews-summary {
+      max-width: 900px;
+      margin: 2.5em auto 1.5em auto;
+      background: rgba(255,255,255,0.98);
+      border-radius: 16px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+      padding: 2em 1.5em 1.5em 1.5em;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2em;
+    }
+    .reviews-summary-col {
+      flex: 1;
+      min-width: 220px;
+    }
+    .reviews-summary-title {
+      color: #1565c0;
+      font-size: 2.1em;
+      margin: 0 0 0.5em 0;
+    }
+    .reviews-summary-average {
+      font-size: 1.3em;
+      color: #1976d2;
+      font-weight: 600;
+      margin-bottom: 0.3em;
+    }
+    .reviews-summary-count {
+      color: #888;
+      font-size: 1.05em;
+    }
+    .reviews-summary-breakdown-label {
+      margin-bottom: 0.7em;
+      font-weight: 500;
+      color: #1976d2;
+    }
+    .reviews-summary-breakdown-row {
+      display: flex;
+      align-items: center;
+      gap: 0.7em;
+      margin-bottom: 0.3em;
+    }
+    .reviews-summary-breakdown-row span {
+      width: 2.5em;
+    }
+    .reviews-summary-breakdown-row progress {
+      width: 120px;
+    }
+    .reviews-summary-breakdown-row .count {
+      color: #888;
+    }
+    .review {
+      border-bottom: 1px solid #e3eaf2;
+      padding: 1.2em 0 1.2em 0;
+      margin-bottom: 0.5em;
+      display: flex;
+      gap: 1.2em;
+      align-items: flex-start;
+    }
+    .review:last-child {
+      border-bottom: none;
+    }
+    .review-avatar {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: #e3eaf2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.7em;
+      color: #1976d2;
+      font-weight: bold;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(21,101,192,0.10);
+    }
+    .review-content {
+      flex: 1;
+    }
+    .review-header {
+      display: flex;
+      align-items: center;
+      gap: 0.7em;
+      margin-bottom: 0.2em;
+      flex-wrap: wrap;
+    }
+    .review-name {
+      font-weight: 600;
+      color: #1976d2;
+      font-size: 1.1em;
+    }
+    .review-location {
+      color: #888;
+      font-size: 0.98em;
+    }
+    .review-rating {
+      color: #ffd700;
+      font-size: 1.1em;
+      margin-left: auto;
+      font-weight: bold;
+    }
+    .review-date {
+      color: #aaa;
+      font-size: 0.95em;
+      margin-left: 0.7em;
+    }
+    .review-body {
+      font-size: 1.08em;
+      margin-top: 0.2em;
+      margin-bottom: 0.2em;
+    }
+    @media (max-width: 600px) {
+      .reviews-container { padding: 0.7em 0.2em; }
+      .review { flex-direction: column; gap: 0.5em; }
+      .review-avatar { margin-bottom: 0.2em; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Guest Reviews</h1>
+    <nav style="text-align:center; margin-bottom:2em;">
+      <a href="index.html">Home</a> |
+      <a href="palace.html">The Wollemi Smart Palace</a> |
+      <a href="retreat.html">The Smart Retreat</a> |
+      <a href="about.html">About</a> |
+      <a href="contact.html">Contact</a> |
+      <a href="gallery.html">Gallery</a> |
+      <a href="booking.html">Book Direct</a> |
+      <a href="leave-review.html">Leave a Review</a>
+    </nav>
+  </header>
+  <div class="reviews-summary">
+    <div class="reviews-summary-col">
+      <h2 class="reviews-summary-title">Guest Reviews</h2>
+      <div class="reviews-summary-average">Average Rating: <span class="star">5.0</span> <span class="star">★★★★★</span></div>
+      <div class="reviews-summary-count">Based on <span id="review-count">70</span> reviews</div>
+    </div>
+    <div class="reviews-summary-col">
+      <div class="reviews-summary-breakdown-label">Rating Breakdown</div>
+      <div class="reviews-summary-breakdown-row"><span>5★</span><progress value="68" max="70"></progress> <span class="count">68</span></div>
+      <div class="reviews-summary-breakdown-row"><span>4★</span><progress value="2" max="70"></progress> <span class="count">2</span></div>
+      <div class="reviews-summary-breakdown-row"><span>3★</span><progress value="0" max="70"></progress> <span class="count">0</span></div>
+      <div class="reviews-summary-breakdown-row"><span>2★</span><progress value="0" max="70"></progress> <span class="count">0</span></div>
+      <div class="reviews-summary-breakdown-row"><span>1★</span><progress value="0" max="70"></progress> <span class="count">0</span></div>
+    </div>
+  </div>
+  <div class="reviews-container">
+<!-- REVIEWS BEGIN -->
+<div class="review"><div class="review-avatar">S</div><div class="review-content"><div class="review-header"><span class="review-name">Sophia</span><span class="review-rating">★★★★★</span><span class="review-date">1 week ago</span></div><div class="review-body">Fantastic house, clear instructions and great location. Loved our stay.</div></div></div>
+<div class="review"><div class="review-avatar">G</div><div class="review-content"><div class="review-header"><span class="review-name">Guillaume</span><span class="review-location">Sydney, Australia</span><span class="review-rating">★★★★★</span><span class="review-date">3 weeks ago</span></div><div class="review-body">Great moment in this beautiful house ! I recommend ! thanks a lot</div></div></div>
+<div class="review"><div class="review-avatar">G</div><div class="review-content"><div class="review-header"><span class="review-name">Geoff</span><span class="review-location">Bella Vista, Australia</span><span class="review-rating">★★★★★</span><span class="review-date">3 weeks ago</span></div><div class="review-body">Well equipped, fun and very clean place to stay. Enjoyed trying out all the technology. Would definitely recommend and would stay here again.</div></div></div>
+<div class="review"><div class="review-avatar">E</div><div class="review-content"><div class="review-header"><span class="review-name">Emma</span><span class="review-rating">★★★★★</span><span class="review-date">3 weeks ago</span></div><div class="review-body">Nice place and such a smart home!!</div></div></div>
+<div class="review"><div class="review-avatar">B</div><div class="review-content"><div class="review-header"><span class="review-name">Baptiste</span><span class="review-rating">★★★★★</span><span class="review-date">August 2025</span></div><div class="review-body">Very clean accommodation with many features. Stuart is very active and accommodating.<br><em>Translated from French</em></div></div></div>
+<div class="review"><div class="review-avatar">S</div><div class="review-content"><div class="review-header"><span class="review-name">Sarah</span><span class="review-rating">★★★★★</span><span class="review-date">July 2025</span></div><div class="review-body">Amazing place to stay . The best air Bnb I’ve stayed at. I highly recommend</div></div></div>
+<div class="review"><div class="review-avatar">H</div><div class="review-content"><div class="review-header"><span class="review-name">Hoi Shan</span><span class="review-location">Sydney, Australia</span><span class="review-rating">★★★★★</span><span class="review-date">June 2025</span></div><div class="review-body">Enjoyed the place very much. Only suggestion to the host is to close the top window in the ensuite during winter as the bathroom got really cold. Since we were only there for one night, we only closed the blinds to minimise the winter draft coming in.</div></div></div>
+<div class="review"><div class="review-avatar">S</div><div class="review-content"><div class="review-header"><span class="review-name">Son</span><span class="review-rating">★★★★★</span><span class="review-date">June 2025</span></div><div class="review-body">We had a wonderful stay at the Smart Retreat! The place was clean, well-maintained, and thoughtfully set up for families. We especially appreciated the handy selection of kids’ toys, board games, a TV, and a projector, which made relaxing together easy and enjoyable. Comfort features like the reclining couch, electric blankets, and a well-equipped kitchen added to the homely feel. The smart home setup with voice-activated controls was a fun and modern bonus. While a few devices had low batteries, it wasn’t a major inconvenience. A couple of things to keep in mind: the entrance has stairs, so it may not suit those with limited mobility, and the driveway is sloped, which could be a concern for low-clearance vehicles — but there’s ample street parking nearby. Stuart was very friendly and prompt in responding to our questions. Overall, it was a great retreat and a very comfortable family stay.</div></div></div>
+<div class="review"><div class="review-avatar">R</div><div class="review-content"><div class="review-header"><span class="review-name">Riley</span><span class="review-location">Freshwater, Australia</span><span class="review-rating">★★★★★</span><span class="review-date">June 2025</span></div><div class="review-body">was good fun place well set up for big group's</div></div></div>
+<div class="review"><div class="review-avatar">C</div><div class="review-content"><div class="review-header"><span class="review-name">Camille</span><span class="review-location">Sydney, Australia</span><span class="review-rating">★★★★★</span><span class="review-date">June 2025</span></div><div class="review-body">Perfect location for a mid size group coming to Katoomba. Would love to stay again!</div></div></div>
+<div class="review"><div class="review-avatar">J</div><div class="review-content"><div class="review-header"><span class="review-name">James</span><span class="review-rating">★★★★★</span><span class="review-date">June 2025</span></div><div class="review-body">Clean and modern home with all the amenities and appliances for a comfortable stay. The smart home features were a fun gimmick.</div></div></div>
+<div class="review"><div class="review-avatar">F</div><div class="review-content"><div class="review-header"><span class="review-name">Foster</span><span class="review-location">New South Wales, Australia</span><span class="review-rating">★★★★★</span><span class="review-date">May 2025</span></div><div class="review-body">Great with the communication - very prompt. Clean and tidy place. Great location.</div></div></div>
+<div class="review"><div class="review-avatar">S</div><div class="review-content"><div class="review-header"><span class="review-name">Suren</span><span class="review-location">Nowra, Australia</span><span class="review-rating">★★★★★</span><span class="review-date">May 2025</span></div><div class="review-body">I had a great experience staying at this Airbnb. The place was clean, comfortable, and exactly as described. The host was friendly, responsive, and made check-in easy. I really appreciated the thoughtful touches and would definitely stay here again. Thank you for a lovely stay!</div></div></div>
+<div class="review"><div class="review-avatar">C</div><div class="review-content"><div class="review-header"><span class="review-name">Cass</span><span class="review-location">Dee Why, Australia</span><span class="review-rating">★★★★★</span><span class="review-date">April 2025</span></div><div class="review-body">Wonderful house. Very peaceful area. Very clean and organised house. The Smart House was good fun and our teenage kids had great fun with it. Didn't need Stuart's help with anything but we felt that support was there if we need it.</div></div></div>
+<div class="review"><div class="review-avatar">P</div><div class="review-content"><div class="review-header"><span class="review-name">Patrick</span><span class="review-rating">★★★★★</span><span class="review-date">April 2025</span></div><div class="review-body">Stuart’s was a brilliant host. He did everything he could to make my stay good. I loved the home cinema and the smart Google home features, even though not all of them were working. Overall the vibe was amazing and I would definitely come back!</div></div></div>
+<div class="review"><div class="review-avatar">J</div><div class="review-content"><div class="review-header"><span class="review-name">Jake</span><span class="review-location">Sydney, Australia</span><span class="review-rating">★★★★★</span><span class="review-date">March 2025</span></div><div class="review-body">It was a very comfortable stay.</div></div></div>
+<div class="review"><div class="review-avatar">N</div><div class="review-content"><div class="review-header"><span class="review-name">Nicholai</span><span class="review-location">Campbelltown, Australia</span><span class="review-rating">★★★★★</span><span class="review-date">March 2025</span></div><div class="review-body">Stuart was cery helpful with his smart home. It took a little getting to know what to command but everything went fine. Place was quiet and clean. Smeg coffee machine made everyone happy. Beds were very very comfortable. Had a really deep and relaxing sleep. Would love to stay again.</div></div></div>
+<div class="review"><div class="review-avatar">M</div><div class="review-content"><div class="review-header"><span class="review-name">Malsha</span><span class="review-location">Gosford, Australia</span><span class="review-rating">★★★★★</span><span class="review-date">March 2025</span></div><div class="review-body">This was a rare find and we got to experience a smart home for the first time. We loved the home theatre experience, would have been better if all the recliner chairs were working though. But apart from that, well equipped home, we were able to cook a hearty meal. Bathtub with the jaccuzi was a plus! Overall totally worth the money paid</div></div></div>
+<div class="review"><div class="review-avatar">S</div><div class="review-content"><div class="review-header"><span class="review-name">Sonia</span><span class="review-location">Cecil Park, Australia</span><span class="review-rating">★★★★★</span><span class="review-date">February 2025</span></div><div class="review-body">Thank you for a wonderful stay in your home</div></div></div>
+<div class="review"><div class="review-avatar">R</div><div class="review-content"><div class="review-header"><span class="review-name">Ru’a</span><span class="review-rating">★★★★★</span><span class="review-date">February 2025</span></div><div class="review-body">Amazing place to stay!!</div></div></div>
+<div class="review"><div class="review-avatar">A</div><div class="review-content"><div class="review-header"><span class="review-name">Aleks</span><span class="review-location">Sydney, Australia</span><span class="review-rating">★★★★★</span><span class="review-date">February 2025</span></div><div class="review-body">This is definitely a smart home, say "hey Google" anywhere in the house and you'll be able to control the lights or the music. Saying "Hey Google, turn off all the lights" during the night while someone is in the shower is especially fun.<br><br>The place was great and really private, you'll need a car to get easily to the city centre. Otherwise there is a clockwise loop bus route that runs every 20-30 mins which runs to the Three Sisters Lookout and the city centre.<br><br>I'd definitely stay here again and recommend it to anyone who has a large group and needs a place to stay.</div></div></div>
+<div class="review"><div class="review-avatar">E</div><div class="review-content"><div class="review-header"><span class="review-name">Elizabeth</span><span class="review-location">Colorado Springs, CO</span><span class="review-rating">★★★★★</span><span class="review-date">February 2025</span></div><div class="review-body">I have only great things to say about this place! My friends and I loved staying here, great kitchen — gas stove, huge grill, and all the kitchen utensils we could have imagined! Comfortable beds and a fun movie night with the projector. Even when our car wouldn’t start, Stuart came over within 20 minutes to help jump it. Genuinely the best Airbnb and hospitality experiences that I have ever had, would stay here again in a heartbeat!</div></div></div>
+<div class="review"><div class="review-avatar">C</div><div class="review-content"><div class="review-header"><span class="review-name">Chris</span><span class="review-rating">★★★★★</span><span class="review-date">January 2025</span></div><div class="review-body">Great all round!</div></div></div>
+<div class="review"><div class="review-avatar">D</div><div class="review-content"><div class="review-header"><span class="review-name">Daing</span><span class="review-location">Five Dock, Australia</span><span class="review-rating">★★★★★</span><span class="review-date">January 2025</span></div><div class="review-body">The house definitely caught my family off guard. It was a very clean and lovely home. Technology filled the house. Additionally, we had a great time viewing nighttime movies on a projector.I'm fairly certain we'll return to stay!</div></div></div>
+<div class="review"><div class="review-avatar">S</div><div class="review-content"><div class="review-header"><span class="review-name">Salman</span><span class="review-location">Merrylands, Australia</span><span class="review-rating">★★★★★</span><span class="review-date">January 2025</span></div><div class="review-body">Stuart place was great it was a good experience especially with the Google nest<br>Highly recommend</div></div></div>
+<div class="review"><div class="review-avatar">G</div><div class="review-content"><div class="review-header"><span class="review-name">Geetha</span><span class="review-rating">★★★★★</span><span class="review-date">January 2025</span></div><div class="review-body">Tech galore and our grand kids enjoyed it. We were happy that ‘hey Google’ kept them busy indoor on a rainy day! Clean and tidy place with all that you need for a good break. Had a good stay</div></div></div>
+<div class="review"><div class="review-avatar">A</div><div class="review-content"><div class="review-header"><span class="review-name">Anna</span><span class="review-location">Merrylands, Australia</span><span class="review-rating">★★★★★</span><span class="review-date">January 2025</span></div><div class="review-body">My weekend trip at Katoomba was wonderful as we were able to explore a smart house during a rainy weekend with everything provided in the home! Location is close to the town and in a quiet area. Stuart was very accomodating and responsive. Hope to visit again!</div></div></div>
+<div class="review"><div class="review-avatar">J</div><div class="review-content"><div class="review-header"><span class="review-name">Jimmy</span><span class="review-location">Sydney, Australia</span><span class="review-rating">★★★★★</span><span class="review-date">January 2025</span></div><div class="review-body">Very nice stay, very clean place, kids loved it. Google voice command can sometimes be hard to use, especially when you try to turn off the music.</div></div></div>
+<div class="review"><div class="review-avatar">L</div><div class="review-content"><div class="review-header"><span class="review-name">Lisa</span><span class="review-location">Amsterdam, Netherlands</span><span class="review-rating">★★★★★</span><span class="review-date">January 2025</span></div><div class="review-body">If I could give this place 6 stars, I would!<br>It was fabulous and delighted us more than we expected. Tech was clever in the house. Beds were super comfy and nice towels provided.<br><br>I appreciated the great communication and the information in the home.<br><br>Easy spot to get out and enjoy the best of the Blue Mountains!</div></div></div>
+<div class="review"><div class="review-avatar">S</div><div class="review-content"><div class="review-header"><span class="review-name">Stuart</span><span class="review-rating">Response from Stuart</span><span class="review-date">January 2025</span></div><div class="review-body">Thank you so so much. it was our pleasure to host you and please come back again. Have a wonderful and safe new year.<br>Warm regards,<br>Stuart and Lina</div></div></div>
+<div class="review"><div class="review-avatar">S</div><div class="review-content"><div class="review-header"><span class="review-name">Steve</span><span class="review-location">Toronto, Canada</span><span class="review-rating">★★★★★</span><span class="review-date">January 2025</span></div><div class="review-body">Stuart's house was great. The host's instructions were very clear and it was fun to play with the all the technology in the house. I would recommend to friends</div></div></div>
+<div class="review"><div class="review-avatar">M</div><div class="review-content"><div class="review-header"><span class="review-name">Martin</span><span class="review-location">Sydney, Australia</span><span class="review-rating">★★★★★</span><span class="review-date">January 2025</span></div><div class="review-body">Our family of 5 enjoyed our stay at Stuart's place in Katoomba. The kids particularly loved the google nests everywhere and the projection screen. The location was peaceful and close to all attractions. Stuart's communication and quick replies were top notch. Can't fault this place. Would recommend for sure!</div></div></div>
+<div class="review"><div class="review-avatar">G</div><div class="review-content"><div class="review-header"><span class="review-name">Gagandeep</span><span class="review-location">Eleebana, Australia</span><span class="review-rating">★★★★★</span><span class="review-date">December 2024</span></div><div class="review-body">The smart retreat was clean and comfortable. The kids loved the technology. Had a wonderful stay, highly recommend</div></div></div>
+<div class="review"><div class="review-avatar">Y</div><div class="review-content"><div class="review-header"><span class="review-name">Yudhi</span><span class="review-location">Chatswood, Australia</span><span class="review-rating">★★★★★</span><span class="review-date">December 2024</span></div><div class="review-body">Great place to stay! We also had a lot of fun with the smart things and beautiful house.</div></div></div>
+<div class="review"><div class="review-avatar">T</div><div class="review-content"><div class="review-header"><span class="review-name">Tanya</span><span class="review-location">Charlton, Australia</span><span class="review-rating">★★★★★</span><span class="review-date">December 2024</span></div><div class="review-body">We had a wonderful stay at this beautiful home in Katoomba. The house was spotlessly clean and well-equipped, perfect for our family of five. The host’s communication was excellent. Located in a peaceful and quiet area, it was the ideal base for exploring the Blue Mountains. We would absolutely stay here again!</div></div></div>
+<div class="review"><div class="review-avatar">S</div><div class="review-content"><div class="review-header"><span class="review-name">Stuart</span><span class="review-rating">Response from Stuart</span><span class="review-date">December 2024</span></div><div class="review-body">Thankyou so much for the positive review and looking after our house, we welcome you back anytime.<br>Merry Christmas<br>Stuart and Lina.</div></div></div>
+<div class="review"><div class="review-avatar">S</div><div class="review-content"><div class="review-header"><span class="review-name">Sayaka</span><span class="review-location">Setagaya City, Japan</span><span class="review-rating">★★★★★</span><span class="review-date">December 2024</span></div><div class="review-body">We had an amazing time experiencing the smart home appliances. The house is beautiful, quiet, and conveniently located near the center of Katoomba.</div></div></div>
+<div class="review"><div class="review-avatar">K</div><div class="review-content"><div class="review-header"><span class="review-name">Kenny</span><span class="review-location">Newtown, Australia</span><span class="review-rating">★★★★★</span><span class="review-date">November 2024</span></div><div class="review-body">it was such a delight to stay at the smart retreat. It was so spacy, well setup to entertain the family, and everything there was fit for purpose. Can't wait to book our next getaway with the family there!</div></div></div>
+<div class="review"><div class="review-avatar">S</div><div class="review-content"><div class="review-header"><span class="review-name">Stuart</span><span class="review-rating">Response from Stuart</span><span class="review-date">November 2024</span></div><div class="review-body">Thank you Kenny, we would welcome you back anytime. very happy you enjoyed the house and its amenities.<br>Stuart.</div></div></div>
+<div class="review"><div class="review-avatar">A</div><div class="review-content"><div class="review-header"><span class="review-name">Aaron</span><span class="review-location">Cronulla, Australia</span><span class="review-rating">★★★★★</span><span class="review-date">November 2024</span></div><div class="review-body">great stay :) - unique automation of a modern home!</div></div></div>
+<div class="review"><div class="review-avatar">L</div><div class="review-content"><div class="review-header"><span class="review-name">Lolza</span><span class="review-location">New South Wales, Australia</span><span class="review-rating">★★★★★</span><span class="review-date">November 2024</span></div><div class="review-body">Loved every second of it and will be back again! Having music playing while cooking and hanging out through the whole house was such a great vibe . The host was amazing and so accommodating :) Thankyou!!</div></div></div>
+<div class="review"><div class="review-avatar">D</div><div class="review-content"><div class="review-header"><span class="review-name">Deon</span><span class="review-location">Singapore</span><span class="review-rating">★★★★★</span><span class="review-date">November 2024</span></div><div class="review-body">Stuart’s place is incredibly amazing! It is very near to blue mountain and eateries, the house is beautiful and cozy. The bed is extremely comfortable, would definitely recommend the place to all my friends and families. 🫶🏻</div></div></div>
+<div class="review"><div class="review-avatar">S</div><div class="review-content"><div class="review-header"><span class="review-name">Susanne</span><span class="review-location">Berlin, Germany</span><span class="review-rating">★★★★★</span><span class="review-date">October 2024</span></div><div class="review-body">The house is fancy with all the wifi controlled issues like blinds and lights and music everywhere. Our kids loved it.<br>You will find a well equipped kitchen and a comfy lounge area and super comfortable beds.</div></div></div>
+<div class="review"><div class="review-avatar">C</div><div class="review-content"><div class="review-header"><span class="review-name">Catherine</span><span class="review-location">George Town, Malaysia</span><span class="review-rating">★★★★★</span><span class="review-date">October 2024</span></div><div class="review-body">One of the best Airbnb stays we've had. Something you would envision your dream home to be. Stuart is very responsive and check-in process was smooth. Wished we had more time to enjoy the bath tub as it looked so inviting! We definitely had fun playing with the Google minis which are everywhere, from turning on music to lights and even controlling the showers! That was definitely an amazing experience. Very well equipped for cooking in too. Recommended for 2 nights stay at least to truly enjoy the home. Only caution is the entrance if you are driving a large car, coming in from opposite lane can be abit challenging due to the slope.</div></div></div>
+<div class="review"><div class="review-avatar">K</div><div class="review-content"><div class="review-header"><span class="review-name">Kim</span><span class="review-location">Black Creek, Australia</span><span class="review-rating">★★★★★</span><span class="review-date">September 2024</span></div><div class="review-body">We loved our stay, the house was so much fun with all the technology. Everything we could possibly need and super clean.</div></div></div>
+<div class="review"><div class="review-avatar">K</div><div class="review-content"><div class="review-header"><span class="review-name">Kartik</span><span class="review-rating">★★★★★</span><span class="review-date">September 2024</span></div><div class="review-body">Absolutely loved the smart treat. Property was immaculate and impressive.</div></div></div>
+<div class="review"><div class="review-avatar">A</div><div class="review-content"><div class="review-header"><span class="review-name">Amy</span><span class="review-location">Sydney, Australia</span><span class="review-rating">★★★★★</span><span class="review-date">September 2024</span></div><div class="review-body">Our stay was a perfect retreat for the weekend. The smart aspects of the house were fun and easy to use and a great bonus to the already lovely house. The appliances and amenities were above and beyond what we expected, which made our stay so comfortable and peaceful. We enjoyed cooking and eating group meals and watching shows on the projector, and when we went out to see the sights, everything was so close and convenient.<br>Overall an amazing weekend, thanks so much for having us!</div></div></div>
+<div class="review"><div class="review-avatar">A</div><div class="review-content"><div class="review-header"><span class="review-name">Adam</span><span class="review-location">Bangor, Australia</span><span class="review-rating">★★★★☆</span><span class="review-date">July 2024</span></div><div class="review-body">Stuart was a lovely responsive host. Thanks for your help.<br><br>Our family enjoyed exploring the unique tech experience.</div></div></div>
+<div class="review"><div class="review-avatar">S</div><div class="review-content"><div class="review-header"><span class="review-name">Stuart</span><span class="review-rating">Response from Stuart</span><span class="review-date">July 2024</span></div><div class="review-body">Thank you Adam, very glad to hear you and family enjoyed the Tech,<br>Wish we could help more with the air conditioning in the living room, our maintenance team said it is working, however it just needs select the correct mode and it takes about a minute or less for the hot air, we had it test out.</div></div></div>
+<div class="review"><div class="review-avatar">B</div><div class="review-content"><div class="review-header"><span class="review-name">Brooke</span><span class="review-location">Mount Colah, Australia</span><span class="review-rating">★★★★★</span><span class="review-date">July 2024</span></div><div class="review-body">Was a great tech house! Lots of fun</div></div></div>
+<div class="review"><div class="review-avatar">G</div><div class="review-content"><div class="review-header"><span class="review-name">Garu</span><span class="review-location">Sydney, Australia</span><span class="review-rating">★★★★★</span><span class="review-date">July 2024</span></div><div class="review-body">Fantastic stay with unique amenities in a convenient and peaceful location.</div></div></div>
+<div class="review"><div class="review-avatar">N</div><div class="review-content"><div class="review-header"><span class="review-name">Nathaniel</span><span class="review-rating">★★★★★</span><span class="review-date">July 2024</span></div><div class="review-body">Great place to stay when visitting the Blue Mountain. Clean, good location and exactly as advertised!</div></div></div>
+<div class="review"><div class="review-avatar">J</div><div class="review-content"><div class="review-header"><span class="review-name">Jhaydene</span><span class="review-location">New South Wales, Australia</span><span class="review-rating">★★★★★</span><span class="review-date">June 2024</span></div><div class="review-body">Fantastic spot and great location so close to everything. A very well thought out place and really good if you have younger kids!!</div></div></div>
+<div class="review"><div class="review-avatar">J</div><div class="review-content"><div class="review-header"><span class="review-name">Joseph</span><span class="review-location">Newcastle, Australia</span><span class="review-rating">★★★★★</span><span class="review-date">June 2024</span></div><div class="review-body">Amazing location, amazing house. Had a lovely relaxing time! perfect house to come back to after long days of hiking!</div></div></div>
+<div class="review"><div class="review-avatar">S</div><div class="review-content"><div class="review-header"><span class="review-name">Stuart</span><span class="review-rating">Response from Stuart</span><span class="review-date">June 2024</span></div><div class="review-body">Thank you so much Joseph, we would love to have you guys back.</div></div></div>
+<div class="review"><div class="review-avatar">R</div><div class="review-content"><div class="review-header"><span class="review-name">Reeve</span><span class="review-location">Singapore</span><span class="review-rating">★★★★★</span><span class="review-date">June 2024</span></div><div class="review-body">best airbnb that me and my friends have stayed in, great amenities and very cozy looking home</div></div></div>
+<div class="review"><div class="review-avatar">T</div><div class="review-content"><div class="review-header"><span class="review-name">Tara</span><span class="review-location">New South Wales, Australia</span><span class="review-rating">★★★★★</span><span class="review-date">June 2024</span></div><div class="review-body">It was definitely a unique experience to stay in a smart home like this. This place has everything you need. Everything was well maintained. Great amenities and comfortable beds.</div></div></div>
+<div class="review"><div class="review-avatar">S</div><div class="review-content"><div class="review-header"><span class="review-name">Stuart</span><span class="review-rating">Response from Stuart</span><span class="review-date">June 2024</span></div><div class="review-body">Thank you so much for the review Tara.</div></div></div>
+<div class="review"><div class="review-avatar">N</div><div class="review-content"><div class="review-header"><span class="review-name">Nic</span><span class="review-location">Manly, Australia</span><span class="review-rating">★★★★★</span><span class="review-date">May 2024</span></div><div class="review-body">Weekend stay at Stuart’s with extended family was great. Really enjoyed our stay and would return</div></div></div>
+<div class="review"><div class="review-avatar">S</div><div class="review-content"><div class="review-header"><span class="review-name">Stuart</span><span class="review-rating">Response from Stuart</span><span class="review-date">June 2024</span></div><div class="review-body">Thank you so much for your review and hope to host you again in the future</div></div></div>
+<div class="review"><div class="review-avatar">A</div><div class="review-content"><div class="review-header"><span class="review-name">Anusha</span><span class="review-location">Sydney, Australia</span><span class="review-rating">★★★★★</span><span class="review-date">May 2024</span></div><div class="review-body">Beautiful place and nicely decorated. A lot of gadgets and technologies has been put in for customers' convenience and when the description says it is a smart retreat, it really is. My family and I had a wonderful time there. I must say my favourite part of the house was the kitchen whereas for my wife it was the high-tech bathroom. The host was super nice and helpful too. I definitely recommend this place. 👌<br>Thank you Stuart and Lina 😊 🙏</div></div></div>
+<div class="review"><div class="review-avatar">S</div><div class="review-content"><div class="review-header"><span class="review-name">Stuart</span><span class="review-rating">Response from Stuart</span><span class="review-date">May 2024</span></div><div class="review-body">Thank you so much Anusha and it's our pleasure to have the opportunity to host your family.</div></div></div>
+<div class="review"><div class="review-avatar">K</div><div class="review-content"><div class="review-header"><span class="review-name">Karen</span><span class="review-location">Tainan City, Taiwan</span><span class="review-rating">★★★★★</span><span class="review-date">May 2024</span></div><div class="review-body">We had a lot of fun at the place; everything was well provided with clear instructions. We will definitely come back again.</div></div></div>
+<div class="review"><div class="review-avatar">S</div><div class="review-content"><div class="review-header"><span class="review-name">Stuart</span><span class="review-rating">Response from Stuart</span><span class="review-date">June 2024</span></div><div class="review-body">Thank you so much Karen and definitely working on how to add other language to google assistance in the future</div></div></div>
+<div class="review"><div class="review-avatar">C</div><div class="review-content"><div class="review-header"><span class="review-name">Chee Hong</span><span class="review-rating">★★★★★</span><span class="review-date">May 2024</span></div><div class="review-body">Overall the house was great, and clean.</div></div></div>
+<div class="review"><div class="review-avatar">S</div><div class="review-content"><div class="review-header"><span class="review-name">Stuart</span><span class="review-rating">Response from Stuart</span><span class="review-date">May 2024</span></div><div class="review-body">Thank you so much Chee Hong, and glad to know you all feel warm and happy with the house. hope to host you again in the future!</div></div></div>
+<div class="review"><div class="review-avatar">C</div><div class="review-content"><div class="review-header"><span class="review-name">Corinth</span><span class="review-location">Canberra, Australia</span><span class="review-rating">★★★★★</span><span class="review-date">May 2024</span></div><div class="review-body">The Smart Home was exactly as described. Was a really fun and unique stay at a beautiful location. Would definitely stay again if we returned.</div></div></div>
+<div class="review"><div class="review-avatar">S</div><div class="review-content"><div class="review-header"><span class="review-name">Stuart</span><span class="review-rating">Response from Stuart</span><span class="review-date">May 2024</span></div><div class="review-body">Thank you so much Corinth for your review and we are very glad to hear you all had fun and we are looking forward to host you again</div></div></div>
+<div class="review"><div class="review-avatar">C</div><div class="review-content"><div class="review-header"><span class="review-name">Chi Wing</span><span class="review-rating">★★★★★</span><span class="review-date">April 2024</span></div><div class="review-body">It is a good b and b, we love it very much, especially the kids room, my kids loved it so much.</div></div></div>
+<div class="review"><div class="review-avatar">S</div><div class="review-content"><div class="review-header"><span class="review-name">Stuart</span><span class="review-rating">Response from Stuart</span><span class="review-date">May 2024</span></div><div class="review-body">Thank you so much for the review, it was our pleasure to host you and hope to see you again!</div></div></div>
+<div class="review"><div class="review-avatar">R</div><div class="review-content"><div class="review-header"><span class="review-name">Roger</span><span class="review-location">Pemulwuy, Australia</span><span class="review-rating">★★★★★</span><span class="review-date">April 2024</span></div><div class="review-body">Living in the future. This is a one of a kind accommodation with voice assistance technology everywhere. Kids loved it and maybe too much 'hey google, play fart symphony' was heard on the weekend but this added more fun to our stay 😉<br>We also appreciated all the appliances that were available, especially the rice cooker!</div></div></div>
+<div class="review"><div class="review-avatar">S</div><div class="review-content"><div class="review-header"><span class="review-name">Stuart</span><span class="review-rating">Response from Stuart</span><span class="review-date">May 2024</span></div><div class="review-body">Thank you so much for the review! we are so glad the kids loved the smart tech and you all had a good time. we hope to host you all agian.</div></div></div>
+<div class="review"><div class="review-avatar">A</div><div class="review-content"><div class="review-header"><span class="review-name">Amy</span><span class="review-rating">★★★★★</span><span class="review-date">April 2024</span></div><div class="review-body">What a great experience to this smart home !!! So modern and functional everything in the house . It is a kids friendly and cosy place !!! And it is so beautiful and clean . Thanks Stuart for the quick and useful instructions for checking in .</div></div></div>
+<div class="review"><div class="review-avatar">S</div><div class="review-content"><div class="review-header"><span class="review-name">Stuart</span><span class="review-rating">Response from Stuart</span><span class="review-date">May 2024</span></div><div class="review-body">Thank you so much for the review, we hope too see you all again in the future!</div></div></div>
+<div class="review"><div class="review-avatar">M</div><div class="review-content"><div class="review-header"><span class="review-name">Marc</span><span class="review-location">Spring, TX</span><span class="review-rating">★★★★★</span><span class="review-date">March 2024</span></div><div class="review-body">Place was as described and was very clean.<br><br>The smart stuff can get annoying at times, but its also super useful at times to shut off/on things from the couch or the bed.<br><br>Close proximity to scenic world stuff.</div></div></div>
+<div class="review"><div class="review-avatar">S</div><div class="review-content"><div class="review-header"><span class="review-name">Stuart</span><span class="review-rating">Response from Stuart</span><span class="review-date">March 2024</span></div><div class="review-body">thank you so much for your review and we are looking forward to host you again in the future</div></div></div>
+<div class="review"><div class="review-avatar">E</div><div class="review-content"><div class="review-header"><span class="review-name">Erika Louise</span><span class="review-location">Sydney, Australia</span><span class="review-rating">★★★★★</span><span class="review-date">January 2024</span></div><div class="review-body">The place is amazing and it really is a smart home (probably smarter than us!). The only thing we regret is that we only stayed for one night. We will surely come back next time. This stay was definitely one for the books!</div></div></div>
+<div class="review"><div class="review-avatar">S</div><div class="review-content"><div class="review-header"><span class="review-name">Stuart</span><span class="review-rating">Response from Stuart</span><span class="review-date">January 2024</span></div><div class="review-body">Thank you so much for your review and would love to have you back anytime.</div></div></div>
+<div class="review"><div class="review-avatar">I</div><div class="review-content"><div class="review-header"><span class="review-name">Ignacio</span><span class="review-location">Santiago, Chile</span><span class="review-rating">★★★★★</span><span class="review-date">January 2024</span></div><div class="review-body">Amazing place</div></div></div>
+<div class="review"><div class="review-avatar">D</div><div class="review-content"><div class="review-header"><span class="review-name">David</span><span class="review-location">Mollymook Beach, Australia</span><span class="review-rating">★★★★☆</span><span class="review-date">January 2024</span></div><div class="review-body">This place was amazing and comfortable, great spot and lots of home comforts. The smart voice activated devices for the tap in the kitchen was rather maddening after a while. Dedicated work space was really apparent and then not comfortable. But it was an experience and thought provoking. This has given a better appreciation of unplugged devices.</div></div></div>
+<div class="review"><div class="review-avatar">C</div><div class="review-content"><div class="review-header"><span class="review-name">Cynthia</span><span class="review-location">Sydney, Australia</span><span class="review-rating">★★★★★</span><span class="review-date">January 2024</span></div><div class="review-body">Had a wonderful stay at this beautiful home,<br>Highly recommend 👍️👍️👍️<br>very cosy and comfortable ,great location as well.<br>Excellent presentation and have thought of everything. ⭐️⭐️⭐️⭐️⭐️<br>Very friendly and helpful host thanks Lina and Stuart .</div></div></div>
+<div class="review"><div class="review-avatar">S</div><div class="review-content"><div class="review-header"><span class="review-name">Stuart</span><span class="review-rating">Response from Stuart</span><span class="review-date">January 2024</span></div><div class="review-body">Thank you Cynthia and hope to have you back in somedays</div></div></div>
+<div class="review"><div class="review-avatar">S</div><div class="review-content"><div class="review-header"><span class="review-name">Shalini</span><span class="review-location">Sydney, Australia</span><span class="review-rating">★★★★★</span><span class="review-date">January 2024</span></div><div class="review-body">Stuart the host was accomodating and friendly. The house is beautiful and we all enjoyed our stay, it was just amazing!</div></div></div>
+<div class="review"><div class="review-avatar">S</div><div class="review-content"><div class="review-header"><span class="review-name">Stuart</span><span class="review-rating">Response from Stuart</span><span class="review-date">January 2024</span></div><div class="review-body">Thank you Shalini, very appreciate your review!</div></div></div>
+<div class="review"><div class="review-avatar">K</div><div class="review-content"><div class="review-header"><span class="review-name">Khoa</span><span class="review-location">Sydney Olympic Park, Australia</span><span class="review-rating">★★★★★</span><span class="review-date">December 2023</span></div><div class="review-body">Thanks Stuart<br>Hopefully I will have a chance to visit the place again. The place is a true gem, been to many places, this one is a must here in Katoomba.</div></div></div>
+<div class="review"><div class="review-avatar">S</div><div class="review-content"><div class="review-header"><span class="review-name">Stuart</span><span class="review-rating">Response from Stuart</span><span class="review-date">January 2024</span></div><div class="review-body">Thank you so much Khoa and Hope to host you again</div></div></div>
+<div class="review"><div class="review-avatar">D</div><div class="review-content"><div class="review-header"><span class="review-name">Dianawaty</span><span class="review-location">Bondi Junction, Australia</span><span class="review-rating">★★★★★</span><span class="review-date">December 2023</span></div><div class="review-body">A very beautiful place and equipped with modern technology, but more importantly it is very clean, comfortable and kids friendly.</div></div></div>
+<div class="review"><div class="review-avatar">S</div><div class="review-content"><div class="review-header"><span class="review-name">Stuart</span><span class="review-rating">Response from Stuart</span><span class="review-date">January 2024</span></div><div class="review-body">Thank you so much Dianawaty and We are very happy to know kids had a lot of fun with the Google gadget and kids room</div></div></div>
+<div class="review"><div class="review-avatar">C</div><div class="review-content"><div class="review-header"><span class="review-name">Carven</span><span class="review-location">Tainan City, Taiwan</span><span class="review-rating">★★★★★</span><span class="review-date">December 2023</span></div><div class="review-body">The best accommodation for family vacation in Blue Mountain park.. thoughtful living supports, modern facilities, convenient location, timely help for all you can name it..</div></div></div>
+<div class="review"><div class="review-avatar">S</div><div class="review-content"><div class="review-header"><span class="review-name">Stuart</span><span class="review-rating">Response from Stuart</span><span class="review-date">December 2023</span></div><div class="review-body">Thank you so much Carven it was a pleasure to host you and we would welcome you back anytime.</div></div></div>
+<div class="review"><div class="review-avatar">D</div><div class="review-content"><div class="review-header"><span class="review-name">Donna</span><span class="review-location">Beecroft, Australia</span><span class="review-rating">★★★★★</span><span class="review-date">December 2023</span></div><div class="review-body">This is a really cool house and spotlessly clean. All appliances and fittings are modern and hi-tech. The recliner lounge was great for relaxing after a day out hiking. There are plenty of very comfortable beds with hotel quality linen.<br>The location is close to shops, restaurants and activities in the national park.<br>Stuart and Lina were extremely quick to respond to help out with the tech.</div></div></div>
+<div class="review"><div class="review-avatar">S</div><div class="review-content"><div class="review-header"><span class="review-name">Stuart</span><span class="review-rating">Response from Stuart</span><span class="review-date">December 2023</span></div><div class="review-body">thank you so much Donna and we really appreciate the review and how well cleaned you left the house...</div></div></div>
+<!-- REVIEWS CONTINUED: For brevity, only the first 20 reviews are shown here. The rest can be added in the same format. -->
+  </div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leave a Review - Blue Mountains Smart Homes</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: url('static/images/76.jpg') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #222;
+    }
+    .leave-review-container {
+      max-width: 520px;
+      margin: 3em auto;
+      background: rgba(255,255,255,0.97);
+      border-radius: 18px;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+      padding: 2.5em 1.5em 2em 1.5em;
+    }
+    h1 {
+      text-align: center;
+      color: #1565c0;
+      margin-bottom: 1.5em;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2em;
+    }
+    input, textarea, select {
+      padding: 0.8em;
+      border: 1px solid #e3eaf2;
+      border-radius: 8px;
+      font-size: 1em;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 0.8em;
+      background: #1565c0;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1.1em;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(21,101,192,0.10);
+      transition: background 0.18s;
+    }
+    button:hover {
+      background: #1976d2;
+    }
+    label {
+      font-weight: 500;
+      margin-bottom: 0.3em;
+      color: #1976d2;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Leave a Review</h1>
+    <nav style="text-align:center; margin-bottom:2em;">
+      <a href="index.html">Home</a> |
+      <a href="gallery.html">Gallery</a>
+    </nav>
+  </header>
+  <div class="leave-review-container">
+    <form action="mailto:bookings@bluemountainssmarthomes.com" method="POST" enctype="text/plain">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required>
+      <label for="location">Your Location</label>
+      <input type="text" id="location" name="location">
+      <label for="email">Your Email (optional)</label>
+      <input type="email" id="email" name="email">
+      <label for="checkout">Checkout Date</label>
+      <input type="date" id="checkout" name="checkout" required>
+      <label for="rating">Rating</label>
+      <select id="rating" name="rating" required>
+        <option value="">Select</option>
+        <option value="5">5 - Excellent</option>
+        <option value="4">4 - Very Good</option>
+        <option value="3">3 - Good</option>
+        <option value="2">2 - Fair</option>
+        <option value="1">1 - Poor</option>
+      </select>
+      <label for="review">Your Review</label>
+      <textarea id="review" name="review" rows="5" required></textarea>
+      <button type="submit">Submit Review</button>
+    </form>
+  </div>
+</body>
+</html>
