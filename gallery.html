@@ -6,8 +6,21 @@
     <title>Gallery</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        .room-card {
+            background: #f7faff;
+            border: 1px solid #e3eaf2;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(21,101,192,0.07);
+            padding: 1em 1.2em;
+            margin-bottom: 1.2em;
+            transition: box-shadow 0.2s;
+        }
+        .room-card:hover {
+            box-shadow: 0 4px 16px rgba(21,101,192,0.15);
+        }
         body {
-            background: linear-gradient(135deg, #e0e7ff 0%, #f5f7fa 50%, #b3c6ff 100%);
+            background: url('static/images/76.jpg') no-repeat center center fixed;
+            background-size: cover;
             color: #222;
             font-family: 'Segoe UI', Arial, sans-serif;
             margin: 0;
@@ -18,8 +31,8 @@
             content: "";
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: url('https://www.transparenttextures.com/patterns/diamond-upholstery.png');
-            opacity: 0.12;
+            /* No pattern overlay, just a slight dark shade for readability */
+            background: rgba(0,0,0,0.10);
             z-index: 0;
             pointer-events: none;
         }
@@ -29,13 +42,83 @@
         }
         .gallery-container { max-width: 1100px; margin: 2em auto; padding: 2em; background: #fff; border-radius: 16px; box-shadow: 0 4px 32px rgba(0,0,0,0.08); }
         h1 { text-align: center; color: #1565c0; margin-bottom: 2em; }
-        h2 { color: #42a5f5; margin-top: 2em; }
-        h3 { color: #1976d2; margin-top: 1.2em; }
+    h2 { color: #42a5f5; margin-top: 2em; }
+    h3 { color: #1976d2; margin-top: 1.2em; font-size: 0.85em !important; }
         .room-section { margin-bottom: 1.5em; }
-        .extras-section { margin-top: 2.5em; }
-        @media (max-width: 700px) {
-            .gallery-container { padding: 0.5em; }
+        .room-section h3 {
+            font-size: 1em !important;
         }
+        .extras-section { margin-top: 2.5em; }
+        .room-photos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 0.5em 0 2em 0;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+        .room-photos img {
+            cursor: pointer;
+            width: 120px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(21,101,192,0.10);
+        }
+        /* Lightbox styles */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0; top: 0; width: 100vw; height: 100vh;
+            background: rgba(0,0,0,0.85);
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox-modal.active {
+            display: flex;
+        }
+        .lightbox-content {
+            position: relative;
+            display: inline-block;
+        }
+        .lightbox-img {
+            max-width: 90vw;
+            max-height: 80vh;
+            border-radius: 10px;
+            box-shadow: 0 4px 32px rgba(0,0,0,0.4);
+            display: block;
+        }
+        .lightbox-close {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            font-size: 1.1em;
+            color: rgba(255,255,255,0.7);
+            background: rgba(21,101,192,0.5);
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(21,101,192,0.12);
+            border: 1px solid rgba(255,255,255,0.5);
+            z-index: 1003;
+            transition: background 0.2s, color 0.2s;
+            opacity: 0.7;
+        }
+        .lightbox-close:hover {
+            background: #fff;
+            color: #1565c0;
+            opacity: 1;
+        }
+        .lightbox-close:hover {
+            background: #e53935;
+            color: #fff;
+        }
+    .gallery-container { padding: 0.5em; }
     </style>
 </head>
 <body>
@@ -55,36 +138,189 @@
         </div>
     </header>
     <div class="gallery-container">
-        <section>
+        <div class="property-cards-row">
+            <div class="property">
                 <h2>The Wollemi Smart Palace</h2>
-            <div class="room-section"><h3>King Bedroom</h3></div>
-            <div class="room-section"><h3>Queen Bedroom</h3></div>
-            <div class="room-section"><h3>Jester Room</h3></div>
-            <div class="room-section"><h3>Palace Veranda</h3></div>
-            <div class="room-section"><h3>Palace Pet Area</h3></div>
-            <div class="room-section"><h3>Palace Courtyard and Garden</h3></div>
-            <div class="room-section"><h3>Palace Parking and Outdoors</h3></div>
-            <div class="room-section"><h3>Palace Kitchen</h3></div>
-            <div class="room-section"><h3>Palace Living Room</h3></div>
-            <div class="room-section"><h3>Palace Bathroom</h3></div>
-            <div class="room-section"><h3>Palace Extras</h3></div>
-        </section>
-    <div class="gallery-flex">
-        <section class="extras-section">
-            <h2>The Smart Retreat</h2>
-            <div class="room-section"><h3>Retreat King Bedroom</h3></div>
-            <div class="room-section"><h3>Retreat Queen Bedroom</h3></div>
-            <div class="room-section"><h3>Retreat Kids Room</h3></div>
-            <div class="room-section"><h3>Retreat Veranda</h3></div>
-            <div class="room-section"><h3>Retreat Ensuite</h3></div>
-            <div class="room-section"><h3>Retreat Dining Room</h3></div>
-            <div class="room-section"><h3>Retreat Laundry</h3></div>
-            <div class="room-section"><h3>Retreat Kitchen</h3></div>
-            <div class="room-section"><h3>Retreat Living Room</h3></div>
-            <div class="room-section"><h3>Retreat Bathroom</h3></div>
-            <div class="room-section"><h3>Retreat Extras</h3></div>
-        </section>
-    </div>
+                <h3>King Bedroom</h3>
+                <div class="room-photos">
+                    <img src="static/images/39.jpg" alt="King Bedroom Photo 1">
+                    <img src="static/images/40.jpg" alt="King Bedroom Photo 2">
+                </div>
+                <h3>Queen Bedroom</h3>
+                <div class="room-photos">
+                    <img src="static/images/44.jpg" alt="Queen Bedroom Photo 1">
+                    <img src="static/images/48.jpg" alt="Queen Bedroom Photo 2">
+                </div>
+                <h3>Jester Room</h3>
+                <div class="room-photos">
+                    <img src="static/images/45.jpg" alt="Jester Room Photo 1">
+                    <img src="static/images/46.jpg" alt="Jester Room Photo 2">
+                </div>
+                <h3>Palace Kitchen and Dining</h3>
+                <div class="room-photos">
+                    <img src="static/images/49.jpg" alt="Palace Kitchen Photo 1">
+                    <img src="static/images/50.jpg" alt="Palace Kitchen Photo 2">
+                    <img src="static/images/51.jpg" alt="Palace Kitchen Photo 3">
+                    <img src="static/images/53.jpg" alt="Palace Kitchen Photo 4">
+                    <img src="static/images/72.jpg" alt="Palace Kitchen Photo 5">
+                </div>
+                <h3>Palace Living Room</h3>
+                <div class="room-photos">
+                    <img src="static/images/42.jpg" alt="Palace Living Room Photo 1">
+                    <img src="static/images/43.jpg" alt="Palace Living Room Photo 2">
+                    <img src="static/images/52.jpg" alt="Palace Living Room Photo 3">
+                    <img src="static/images/54.jpg" alt="Palace Living Room Photo 4">
+                    <img src="static/images/73.jpg" alt="Palace Living Room Photo 5">
+                </div>
+                <h3>Palace Shared Ensuite</h3>
+                <div class="room-photos">
+                    <img src="static/images/47.jpg" alt="Palace Shared Ensuite Photo 1">
+                </div>
+                <h3>Palace Spa and Laundry</h3>
+                <div class="room-photos">
+                    <img src="static/images/41.jpg" alt="Palace Spa and Laundry Photo 1">
+                    <img src="static/images/57.jpg" alt="Palace Spa and Laundry Photo 2">
+                    <img src="static/images/65.jpg" alt="Palace Spa and Laundry Photo 3">
+                    <img src="static/images/66.jpg" alt="Palace Spa and Laundry Photo 4">
+                </div>
+                <h3>Palace Veranda</h3>
+                <div class="room-photos">
+                    <img src="static/images/37.jpg" alt="Palace Veranda Photo 1">
+                    <img src="static/images/62.jpg" alt="Palace Veranda Photo 2">
+                    <img src="static/images/68.jpg" alt="Palace Veranda Photo 3">
+                    <img src="static/images/60.jpg" alt="Palace Veranda Photo 4">
+                    <img src="static/images/63.jpg" alt="Palace Veranda Photo 5">
+                    <img src="static/images/69.jpg" alt="Palace Veranda Photo 6">
+                    <img src="static/images/61.jpg" alt="Palace Veranda Photo 7">
+                    <img src="static/images/67.jpg" alt="Palace Veranda Photo 8">
+                </div>
+                <h3>Palace Pet Area</h3>
+                <div class="room-photos">
+                    <img src="static/images/28.jpg" alt="Palace Pet Area Photo 1">
+                    <img src="static/images/29.jpg" alt="Palace Pet Area Photo 2">
+                    <img src="static/images/30.jpg" alt="Palace Pet Area Photo 3">
+                    <img src="static/images/35.jpg" alt="Palace Pet Area Photo 4">
+                </div>
+                <h3>Palace Courtyard and Garden</h3>
+                <div class="room-photos">
+                    <img src="static/images/32.jpg" alt="Palace Courtyard and Garden Photo 1">
+                    <img src="static/images/36.jpg" alt="Palace Courtyard and Garden Photo 2">
+                    <img src="static/images/55.jpg" alt="Palace Courtyard and Garden Photo 3">
+                    <img src="static/images/58.jpg" alt="Palace Courtyard and Garden Photo 4">
+                    <img src="static/images/59.jpg" alt="Palace Courtyard and Garden Photo 5">
+                    <img src="static/images/64.jpg" alt="Palace Courtyard and Garden Photo 6">
+                    <img src="static/images/71.jpg" alt="Palace Courtyard and Garden Photo 7">
+                    <img src="static/images/70.jpg" alt="Palace Courtyard and Garden Photo 8">
+                    <img src="static/images/56.jpg" alt="Palace Courtyard and Garden Photo 9">
+                </div>
+                <h3>Palace Parking and Outdoors</h3>
+                <div class="room-photos">
+                    <img src="static/images/34.jpg" alt="Palace Parking and Outdoors Photo 1">
+                    <img src="static/images/33.jpg" alt="Palace Parking and Outdoors Photo 2">
+                    <img src="static/images/27.jpg" alt="Palace Parking and Outdoors Photo 3">
+                    <img src="static/images/38.jpg" alt="Palace Parking and Outdoors Photo 4">
+                </div>
+                <h3>Palace Surrounds and Extras</h3>
+                <div class="room-photos">
+                    <img src="static/images/26.jpg" alt="Palace Surrounds and Extras Photo 1">
+                    <img src="static/images/74.jpg" alt="Palace Surrounds and Extras Photo 3">
+                    <img src="static/images/75.jpg" alt="Palace Surrounds and Extras Photo 4">
+                    <img src="static/images/76.jpg" alt="Palace Surrounds and Extras Photo 5">
+                    <img src="static/images/77.jpg" alt="Palace Surrounds and Extras Photo 6">
+                    <img src="static/images/78.jpg" alt="Palace Surrounds and Extras Photo 7">
+                </div>
+            </div>
+            <div class="property">
+                <h2>The Smart Retreat</h2>
+                <h3>Retreat King Bedroom</h3>
+                <div class="room-photos">
+                    <img src="static/images/5.jpg" alt="Retreat King Bedroom Photo 1">
+                </div>
+                <h3>Retreat Queen Bedroom</h3>
+                <div class="room-photos">
+                    <img src="static/images/9.jpg" alt="Retreat Queen Bedroom Photo 1">
+                </div>
+                <h3>Retreat Kids Room</h3>
+                <div class="room-photos">
+                    <img src="static/images/6.jpg" alt="Retreat Kids Room Photo 1">
+                    <img src="static/images/7.jpg" alt="Retreat Kids Room Photo 2">
+                </div>
+                <h3>Retreat Veranda</h3>
+                <div class="room-photos">
+                    <img src="static/images/13.jpg" alt="Retreat Veranda Photo 1">
+                    <img src="static/images/20.jpg" alt="Retreat Veranda Photo 2">
+                    <img src="static/images/14.jpg" alt="Retreat Veranda Photo 3">
+                </div>
+                <h3>Retreat Ensuite</h3>
+                <div class="room-photos">
+                    <img src="static/images/8.jpg" alt="Retreat Ensuite Photo 1">
+                </div>
+                <h3>Retreat Dining Room</h3>
+                <div class="room-photos">
+                    <img src="static/images/2.jpg" alt="Retreat Dining Room Photo 1">
+                </div>
+                <h3>Retreat Laundry</h3>
+                <h3>Retreat Kitchen</h3>
+                <div class="room-photos">
+                    <img src="static/images/18.jpg" alt="Retreat Kitchen Photo 1">
+                    <img src="static/images/1.jpg" alt="Retreat Kitchen Photo 2">
+                </div>
+                <h3>Retreat Living Room</h3>
+                <div class="room-photos">
+                    <img src="static/images/3.jpg" alt="Retreat Living Room Photo 1">
+                    <img src="static/images/10.jpg" alt="Retreat Living Room Photo 2">
+                    <img src="static/images/17.jpg" alt="Retreat Living Room Photo 3">
+                    <img src="static/images/23.jpg" alt="Retreat Living Room Photo 4">
+                </div>
+                <h3>Retreat Bathroom</h3>
+                <div class="room-photos">
+                    <img src="static/images/4.jpg" alt="Retreat Bathroom Photo 1">
+                    <img src="static/images/11.jpg" alt="Retreat Bathroom Photo 2">
+                    <img src="static/images/16.jpg" alt="Retreat Bathroom Photo 3">
+                </div>
+                <h3>Retreat Gardens and Surrounds</h3>
+                <div class="room-photos">
+                    <img src="static/images/12.jpg" alt="Retreat Gardens and Surrounds Photo 1">
+                    <img src="static/images/15.jpg" alt="Retreat Gardens and Surrounds Photo 2">
+                    <img src="static/images/19.jpg" alt="Retreat Gardens and Surrounds Photo 3">
+                    <img src="static/images/21.jpg" alt="Retreat Gardens and Surrounds Photo 4">
+                    <img src="static/images/22.jpg" alt="Retreat Gardens and Surrounds Photo 5">
+                    <img src="static/images/24.jpg" alt="Retreat Gardens and Surrounds Photo 6">
+                    <img src="static/images/25.jpg" alt="Retreat Gardens and Surrounds Photo 7">
+                </div>
+            </div>
+        </div>
     </div>
 </body>
+        <!-- Lightbox Modal at end of body -->
+        <div class="lightbox-modal" id="lightboxModal">
+                <div class="lightbox-content">
+                        <img class="lightbox-img" id="lightboxImg" src="" alt="Enlarged photo">
+                        <span class="lightbox-close" id="lightboxClose">&times;</span>
+                </div>
+        </div>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var imgs = document.querySelectorAll('.room-photos img');
+            var modal = document.getElementById('lightboxModal');
+            var modalImg = document.getElementById('lightboxImg');
+            var closeBtn = document.getElementById('lightboxClose');
+            imgs.forEach(function(img) {
+                img.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    modalImg.src = this.src;
+                    modal.classList.add('active');
+                });
+            });
+            closeBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                modal.classList.remove('active');
+            });
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                }
+            });
+        });
+        </script>
 </html>
