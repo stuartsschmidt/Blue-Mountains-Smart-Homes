@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #e0e7ff 0%, #f5f7fa 50%, #b3c6ff 100%);
+            color: #222;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            position: relative;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('https://www.transparenttextures.com/patterns/diamond-upholstery.png');
+            opacity: 0.12;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .gallery-container, header {
+            position: relative;
+            z-index: 1;
+        }
+        .gallery-container { max-width: 1100px; margin: 2em auto; padding: 2em; background: #fff; border-radius: 16px; box-shadow: 0 4px 32px rgba(0,0,0,0.08); }
+        h1 { text-align: center; color: #1565c0; margin-bottom: 2em; }
+        h2 { color: #42a5f5; margin-top: 2em; }
+        h3 { color: #1976d2; margin-top: 1.2em; }
+        .room-section { margin-bottom: 1.5em; }
+        .extras-section { margin-top: 2.5em; }
+        @media (max-width: 700px) {
+            .gallery-container { padding: 0.5em; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Gallery</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="palace.html">The Wollemi Smart Palace</a>
+            <a href="retreat.html">The Smart Retreat</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="booking.html">Book Direct</a>
+        </nav>
+        <div class="main-property-nav">
+            <a href="palace.html" class="main-property-btn">The Wollemi Smart Palace</a>
+            <a href="retreat.html" class="main-property-btn">The Smart Retreat</a>
+        </div>
+    </header>
+    <div class="gallery-container">
+        <section>
+                <h2>The Wollemi Smart Palace</h2>
+            <div class="room-section"><h3>King Bedroom</h3></div>
+            <div class="room-section"><h3>Queen Bedroom</h3></div>
+            <div class="room-section"><h3>Jester Room</h3></div>
+            <div class="room-section"><h3>Palace Veranda</h3></div>
+            <div class="room-section"><h3>Palace Pet Area</h3></div>
+            <div class="room-section"><h3>Palace Courtyard and Garden</h3></div>
+            <div class="room-section"><h3>Palace Parking and Outdoors</h3></div>
+            <div class="room-section"><h3>Palace Kitchen</h3></div>
+            <div class="room-section"><h3>Palace Living Room</h3></div>
+            <div class="room-section"><h3>Palace Bathroom</h3></div>
+            <div class="room-section"><h3>Palace Extras</h3></div>
+        </section>
+    <div class="gallery-flex">
+        <section class="extras-section">
+            <h2>The Smart Retreat</h2>
+            <div class="room-section"><h3>Retreat King Bedroom</h3></div>
+            <div class="room-section"><h3>Retreat Queen Bedroom</h3></div>
+            <div class="room-section"><h3>Retreat Kids Room</h3></div>
+            <div class="room-section"><h3>Retreat Veranda</h3></div>
+            <div class="room-section"><h3>Retreat Ensuite</h3></div>
+            <div class="room-section"><h3>Retreat Dining Room</h3></div>
+            <div class="room-section"><h3>Retreat Laundry</h3></div>
+            <div class="room-section"><h3>Retreat Kitchen</h3></div>
+            <div class="room-section"><h3>Retreat Living Room</h3></div>
+            <div class="room-section"><h3>Retreat Bathroom</h3></div>
+            <div class="room-section"><h3>Retreat Extras</h3></div>
+        </section>
+    </div>
+    </div>
+</body>
+</html>

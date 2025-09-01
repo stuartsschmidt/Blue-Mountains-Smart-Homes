@@ -27,10 +27,20 @@
             object-fit: cover;
             opacity: 0;
             transition: opacity 1s ease-in-out;
-            filter: brightness(1.45) saturate(1.25);
+            filter: brightness(1) saturate(1.1); /* no fading, normal brightness */
         }
         .slideshow-bg img.active {
             opacity: 1;
+        }
+        .slideshow-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(255,255,255,0.16);
+            z-index: 1;
+            pointer-events: none;
         }
         .palace-content {
             position: relative;
@@ -38,10 +48,10 @@
             max-width: 900px;
             margin: 0 auto;
             padding: 2em 1em;
-            background: rgba(0,0,0,0.5);
+            background: rgba(255,255,255,0.10); /* 10% shade */
             border-radius: 16px;
-            color: #fff;
-            box-shadow: 0 4px 32px rgba(0,0,0,0.4);
+            color: #222;
+            box-shadow: 0 4px 32px rgba(0,0,0,0.18);
         }
         .room {
             margin-bottom: 2.5em;
@@ -63,18 +73,32 @@
 </head>
 <body>
     <div class="slideshow-bg">
-    <img src="static/images/veranda.jpg" class="active" alt="Veranda">
-    <img src="static/images/spa.jpg" alt="Spa">
-    <img src="static/images/queen.jpg" alt="Queen Room">
-    <img src="static/images/petarea.jpg" alt="Pet Area">
-    <img src="static/images/king.jpg" alt="King Room">
-    <img src="static/images/jester.jpg" alt="Jester Room">
-    <img src="static/images/backentry.jpg" alt="Back Entry">
-    <img src="static/images/entry.jpg" alt="Entry">
-    <img src="static/images/kd.jpg" alt="Kitchen and Dining">
-    <img src="static/images/living.jpg" alt="Living Room">
-    <img src="static/images/nightdeck.jpg" alt="Night Deck">
-    <img src="static/images/nightgarden.jpg" alt="Night Garden">
+        <div class="slideshow-overlay"></div>
+        <img src="static/images/26.jpg" class="active" alt="26">
+        <img src="static/images/32.jpg" alt="32">
+        <img src="static/images/33.jpg" alt="33">
+        <img src="static/images/34.jpg" alt="34">
+        <img src="static/images/35.jpg" alt="35">
+        <img src="static/images/36.jpg" alt="36">
+        <img src="static/images/37.jpg" alt="37">
+        <img src="static/images/38.jpg" alt="38">
+        <img src="static/images/39.jpg" alt="39">
+        <img src="static/images/40.jpg" alt="40">
+        <img src="static/images/41.jpg" alt="41">
+        <img src="static/images/42.jpg" alt="42">
+        <img src="static/images/43.jpg" alt="43">
+        <img src="static/images/44.jpg" alt="44">
+        <img src="static/images/45.jpg" alt="45">
+        <img src="static/images/46.jpg" alt="46">
+        <img src="static/images/47.jpg" alt="47">
+        <img src="static/images/48.jpg" alt="48">
+        <img src="static/images/49.jpg" alt="49">
+        <img src="static/images/50.jpg" alt="50">
+        <img src="static/images/53.jpg" alt="53">
+        <img src="static/images/64.jpg" alt="64">
+        <img src="static/images/65.jpg" alt="65">
+        <img src="static/images/68.jpg" alt="68">
+        <img src="static/images/69.jpg" alt="69">
     </div>
     <div class="palace-content">
     <h1 class="palace-title" style="text-align:center; font-size:2.8em; margin-bottom:1.2em; color:#42a5f5; text-shadow:2px 2px 8px #000; letter-spacing:2px;">The Wollemi Smart Palace</h1>

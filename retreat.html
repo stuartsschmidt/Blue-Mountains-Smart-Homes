@@ -32,13 +32,23 @@
         .slideshow-bg img.active {
             opacity: 1;
         }
+        .slideshow-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: transparent;
+            z-index: 1;
+            pointer-events: none;
+        }
         .palace-content {
             position: relative;
             z-index: 1;
             max-width: 900px;
             margin: 0 auto;
             padding: 2em 1em;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0,0,0,0.20);
             border-radius: 16px;
             color: #fff;
             box-shadow: 0 4px 32px rgba(0,0,0,0.4);
@@ -92,6 +102,7 @@
 </head>
 <body>
     <div class="slideshow-bg">
+        <div class="slideshow-overlay"></div>
         <img src="static/images/1.jpg" class="active" alt="1">
         <img src="static/images/2.jpg" alt="2">
         <img src="static/images/3.jpg" alt="3">
@@ -103,10 +114,13 @@
         <img src="static/images/9.jpg" alt="9">
         <img src="static/images/10.jpg" alt="10">
         <img src="static/images/11.jpg" alt="11">
-        <img src="static/images/12.jpg" alt="12">
         <img src="static/images/13.jpg" alt="13">
-        <img src="static/images/14.jpg" alt="14">
+        <img src="static/images/18.jpg" alt="18">
+        <img src="static/images/20.jpg" alt="20">
+        <img src="static/images/22.jpg" alt="22">
+        <img src="static/images/23.jpg" alt="23">
     </div>
+    <!-- Rolling background removed -->
     <div class="palace-content">
     <h1 class="palace-title">The Smart Retreat</h1>
         <nav class="palace-nav">
@@ -170,13 +184,15 @@
         </div>
     </div>
     <script>
-        const images = document.querySelectorAll('.slideshow-bg img');
-        let current = 0;
-        setInterval(() => {
-            images[current].classList.remove('active');
-            current = (current + 1) % images.length;
-            images[current].classList.add('active');
-        }, 3500);
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('.slideshow-bg img');
+            let current = 0;
+            setInterval(() => {
+                images[current].classList.remove('active');
+                current = (current + 1) % images.length;
+                images[current].classList.add('active');
+            }, 3500);
+        });
     </script>
 </body>
 </html>
