@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Book Direct</title>
+	<link rel="stylesheet" href="style.css">
+	<style>
+		.booking-cards-container {
+			display: flex;
+			gap: 2em;
+			justify-content: center;
+			align-items: flex-start;
+			flex-wrap: wrap;
+		}
+		.booking-section {
+			flex: 1 1 320px;
+			min-width: 320px;
+			max-width: 700px;
+			margin: 2em auto;
+			padding: 2em;
+			background: #fff;
+			border-radius: 12px;
+			box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+		}
+		.booking-section h2 {
+			margin-top: 0;
+			color: #2a4d69;
+		}
+		.calendar-embed {
+			min-height: 600px;
+		}
+		.page-title {
+			font-size: 3em;
+			color: #fff;
+			text-align: center;
+			margin-top: 1em;
+			margin-bottom: 0.5em;
+			text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+		}
+	</style>
+</head>
+<body>
+	<h1 class="page-title">Book Your Stay Direct</h1>
+	<div class="booking-cards-container">
+		<div class="booking-section">
+			<h2>Book the Palace</h2>
+			<div id="apartmentIframe2849466" class="calendar-embed"></div>
+		</div>
+		<div class="booking-section">
+			<h2>Book the Retreat</h2>
+			<div id="apartmentIframe1894487" class="calendar-embed"></div>
+		</div>
+	</div>
+	<script src="https://login.smoobu.com/js/Settings/BookingToolIframe.js"></script>
+	<script>
+		BookingToolIframe.initialize({
+			url: "https://login.smoobu.com/en/booking-tool/iframe/695065/2849466",
+			baseUrl: "https://login.smoobu.com",
+			target: "#apartmentIframe2849466"
+		});
+		BookingToolIframe.initialize({
+			url: "https://login.smoobu.com/en/booking-tool/iframe/695065/1894487",
+			baseUrl: "https://login.smoobu.com",
+			target: "#apartmentIframe1894487"
+		});
+	</script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Book Direct</title>
+	<link rel="stylesheet" href="style.css">
+	<style>
+		.booking-cards-container {
+			display: flex;
+			gap: 2em;
+			justify-content: center;
+			align-items: flex-start;
+			flex-wrap: wrap;
+		}
+		.booking-section {
+			flex: 1 1 320px;
+			min-width: 320px;
+			max-width: 700px;
+			margin: 2em auto;
+			padding: 2em;
+			background: #fff;
+			border-radius: 12px;
+			box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+		}
+		.booking-section h2 {
+			margin-top: 0;
+			color: #2a4d69;
+		}
+		.calendar-embed {
+			min-height: 600px;
+		}
+	</style>
+</head>
+<body>
+	<h1 class="page-title">Book Your Stay Direct</h1>
+	<div class="booking-cards-container">
+		<div class="booking-section">
+			<h2>Welcome to House 1</h2>
+			<div id="apartmentIframe2849466" class="calendar-embed"></div>
+		</div>
+		<div class="booking-section">
+			<h2>Welcome to House 2</h2>
+			<div id="apartmentIframe1894487" class="calendar-embed"></div>
+		</div>
+	</div>
+	<script type="text/javascript" src="https://login.smoobu.com/js/Settings/BookingToolIframe.js"></script>
+	<script>
+		BookingToolIframe.initialize({
+			"url": "https://login.smoobu.com/en/booking-tool/iframe/695065/2849466",
+			"baseUrl": "https://login.smoobu.com",
+			"target": "#apartmentIframe2849466"
+		});
+		BookingToolIframe.initialize({
+			"url": "https://login.smoobu.com/en/booking-tool/iframe/695065/1894487",
+			"baseUrl": "https://login.smoobu.com",
+			"target": "#apartmentIframe1894487"
+		});
+	</script>
+</body>
+</html>
+
