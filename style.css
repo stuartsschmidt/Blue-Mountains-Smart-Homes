@@ -1,3 +1,14 @@
+/* Ensure Netlify review form is clickable and above other elements */
+form[name="guest-review"] {
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+}
+body.booking-page {
+  background: url('static/images/69.jpg') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+}
 .property h2 {
   color: #111 !important;
   font-size: 2.3rem;

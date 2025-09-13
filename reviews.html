@@ -158,6 +158,46 @@
       <a href="leave-review.html">Leave a Review</a>
     </nav>
   </header>
+  <!-- Review Submission Form (Netlify Forms) -->
+  <div class="reviews-container">
+    <form name="guest-review" method="POST" data-netlify="true" style="margin-bottom:2em; background:#f5faff; border-radius:12px; box-shadow:0 2px 8px rgba(21,101,192,0.07); padding:1.5em 1em;">
+      <h2 style="color:#1565c0; margin-top:0;">Leave a Review</h2>
+      <div style="margin-bottom:1em;">
+        <label for="property" style="display:block; font-weight:500; margin-bottom:0.3em;">Which house did you stay in?</label>
+        <select id="property" name="property" required style="width:100%; padding:0.5em; border-radius:6px; border:1px solid #b3c6e0;">
+          <option value="">Select a house</option>
+          <option value="Wollemi Smart Palace">Wollemi Smart Palace</option>
+          <option value="Smart Retreat">Smart Retreat</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <input type="hidden" name="form-name" value="guest-review">
+      <div style="margin-bottom:1em;">
+        <label for="name" style="display:block; font-weight:500; margin-bottom:0.3em;">Name:</label>
+        <input type="text" id="name" name="name" required style="width:100%; padding:0.5em; border-radius:6px; border:1px solid #b3c6e0;">
+      </div>
+      <div style="margin-bottom:1em;">
+        <label for="location" style="display:block; font-weight:500; margin-bottom:0.3em;">Location (optional):</label>
+        <input type="text" id="location" name="location" style="width:100%; padding:0.5em; border-radius:6px; border:1px solid #b3c6e0;">
+      </div>
+      <div style="margin-bottom:1em;">
+        <label for="rating" style="display:block; font-weight:500; margin-bottom:0.3em;">Rating:</label>
+        <select id="rating" name="rating" required style="width:100%; padding:0.5em; border-radius:6px; border:1px solid #b3c6e0;">
+          <option value="">Select a rating</option>
+          <option value="5">★★★★★ (5 - Excellent)</option>
+          <option value="4">★★★★☆ (4 - Good)</option>
+          <option value="3">★★★☆☆ (3 - Average)</option>
+          <option value="2">★★☆☆☆ (2 - Poor)</option>
+          <option value="1">★☆☆☆☆ (1 - Terrible)</option>
+        </select>
+      </div>
+      <div style="margin-bottom:1em;">
+        <label for="review" style="display:block; font-weight:500; margin-bottom:0.3em;">Your Review:</label>
+        <textarea id="review" name="review" rows="4" required style="width:100%; padding:0.5em; border-radius:6px; border:1px solid #b3c6e0;"></textarea>
+      </div>
+      <button type="submit" style="background:#1976d2; color:#fff; font-weight:600; border:none; border-radius:6px; padding:0.7em 1.5em; cursor:pointer;">Submit Review</button>
+    </form>
+  </div>
   <div class="reviews-summary">
     <div class="reviews-summary-col">
       <h2 class="reviews-summary-title">Guest Reviews</h2>
@@ -174,6 +214,44 @@
     </div>
   </div>
   <div class="reviews-container">
+    <!-- Review Submission Form (Netlify Forms) -->
+    <form name="guest-review" method="POST" data-netlify="true" style="margin-bottom:2em; background:#f5faff; border-radius:12px; box-shadow:0 2px 8px rgba(21,101,192,0.07); padding:1.5em 1em;">
+        <div style="margin-bottom:1em;">
+          <label for="property" style="display:block; font-weight:500; margin-bottom:0.3em;">Which house did you stay in?</label>
+          <select id="property" name="property" required style="width:100%; padding:0.5em; border-radius:6px; border:1px solid #b3c6e0;">
+            <option value="">Select a house</option>
+            <option value="Wollemi Smart Palace">Wollemi Smart Palace</option>
+            <option value="Smart Retreat">Smart Retreat</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+      <h2 style="color:#1565c0; margin-top:0;">Leave a Review</h2>
+      <input type="hidden" name="form-name" value="guest-review">
+      <div style="margin-bottom:1em;">
+        <label for="name" style="display:block; font-weight:500; margin-bottom:0.3em;">Name:</label>
+        <input type="text" id="name" name="name" required style="width:100%; padding:0.5em; border-radius:6px; border:1px solid #b3c6e0;">
+      </div>
+      <div style="margin-bottom:1em;">
+        <label for="location" style="display:block; font-weight:500; margin-bottom:0.3em;">Location (optional):</label>
+        <input type="text" id="location" name="location" style="width:100%; padding:0.5em; border-radius:6px; border:1px solid #b3c6e0;">
+      </div>
+      <div style="margin-bottom:1em;">
+        <label for="rating" style="display:block; font-weight:500; margin-bottom:0.3em;">Rating:</label>
+        <select id="rating" name="rating" required style="width:100%; padding:0.5em; border-radius:6px; border:1px solid #b3c6e0;">
+          <option value="">Select a rating</option>
+          <option value="5">★★★★★ (5 - Excellent)</option>
+          <option value="4">★★★★☆ (4 - Good)</option>
+          <option value="3">★★★☆☆ (3 - Average)</option>
+          <option value="2">★★☆☆☆ (2 - Poor)</option>
+          <option value="1">★☆☆☆☆ (1 - Terrible)</option>
+        </select>
+      </div>
+      <div style="margin-bottom:1em;">
+        <label for="review" style="display:block; font-weight:500; margin-bottom:0.3em;">Your Review:</label>
+        <textarea id="review" name="review" rows="4" required style="width:100%; padding:0.5em; border-radius:6px; border:1px solid #b3c6e0;"></textarea>
+      </div>
+      <button type="submit" style="background:#1976d2; color:#fff; font-weight:600; border:none; border-radius:6px; padding:0.7em 1.5em; cursor:pointer;">Submit Review</button>
+    </form>
 <!-- REVIEWS BEGIN -->
 <div class="review"><div class="review-avatar">S</div><div class="review-content"><div class="review-header"><span class="review-name">Sophia</span><span class="review-rating">★★★★★</span><span class="review-date">1 week ago</span></div><div class="review-body">Fantastic house, clear instructions and great location. Loved our stay.</div></div></div>
 <div class="review"><div class="review-avatar">G</div><div class="review-content"><div class="review-header"><span class="review-name">Guillaume</span><span class="review-location">Sydney, Australia</span><span class="review-rating">★★★★★</span><span class="review-date">3 weeks ago</span></div><div class="review-body">Great moment in this beautiful house ! I recommend ! thanks a lot</div></div></div>
