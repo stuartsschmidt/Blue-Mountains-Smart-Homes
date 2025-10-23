@@ -138,8 +138,8 @@
         </div>
     </header>
     <div class="gallery-container">
-        <div class="property-cards-row" style="display: flex; gap: 2.5rem; justify-content: center; align-items: stretch;">
-            <div class="property" style="flex: 1 1 420px; min-width: 320px; max-width: 520px; min-height: 420px; display: flex; flex-direction: column;">
+        <div class="property-cards-row inline-flex">
+            <div class="property">
                 <h2>The Wollemi Smart Palace</h2>
                 <h3>King Bedroom</h3>
                 <div class="room-photos">
@@ -230,7 +230,7 @@
                     <img src="static/images/78.jpg" alt="Palace Surrounds and Extras Photo 7">
                 </div>
             </div>
-            <div class="property" style="flex: 1 1 420px; min-width: 320px; max-width: 520px; min-height: 420px; display: flex; flex-direction: column;">
+            <div class="property">
                 <h2>The Smart Retreat</h2>
                 <h3>Retreat King Bedroom</h3>
                 <div class="room-photos">
@@ -291,36 +291,36 @@
             </div>
         </div>
     </div>
-</body>
-        <!-- Lightbox Modal at end of body -->
-        <div class="lightbox-modal" id="lightboxModal">
-                <div class="lightbox-content">
-                        <img class="lightbox-img" id="lightboxImg" src="" alt="Enlarged photo">
-                        <span class="lightbox-close" id="lightboxClose">&times;</span>
-                </div>
-        </div>
-        <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var imgs = document.querySelectorAll('.room-photos img');
-            var modal = document.getElementById('lightboxModal');
-            var modalImg = document.getElementById('lightboxImg');
-            var closeBtn = document.getElementById('lightboxClose');
-            imgs.forEach(function(img) {
-                img.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    modalImg.src = this.src;
-                    modal.classList.add('active');
-                });
-            });
-            closeBtn.addEventListener('click', function(e) {
+    <!-- Lightbox Modal at end of body -->
+    <div class="lightbox-modal" id="lightboxModal">
+            <div class="lightbox-content">
+                    <img class="lightbox-img" id="lightboxImg" src="" alt="Enlarged photo">
+                    <span class="lightbox-close" id="lightboxClose">&times;</span>
+            </div>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var imgs = document.querySelectorAll('.room-photos img');
+        var modal = document.getElementById('lightboxModal');
+        var modalImg = document.getElementById('lightboxImg');
+        var closeBtn = document.getElementById('lightboxClose');
+        imgs.forEach(function(img) {
+            img.addEventListener('click', function(e) {
                 e.stopPropagation();
-                modal.classList.remove('active');
-            });
-            modal.addEventListener('click', function(e) {
-                if (e.target === modal) {
-                    modal.classList.remove('active');
-                }
+                modalImg.src = this.src;
+                modal.classList.add('active');
             });
         });
-        </script>
+        closeBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            modal.classList.remove('active');
+        });
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+    });
+    </script>
+</body>
 </html>

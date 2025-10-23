@@ -20,20 +20,49 @@
   </header>
   <main>
     <h2>Book Your Stay</h2>
-    <section style="background: url('static/images/68.jpg') center/cover no-repeat; background-blend-mode: multiply; background-color: rgba(255,255,255,0.18); min-width: 320px; min-height: 420px; max-width: 520px; margin-bottom: 2rem; border-radius: 1rem; box-shadow: 0 2px 12px rgba(0,0,0,0.12); padding: 1.5rem;">
+  <section class="property property-bg-palace property-card-compact">
       <h3>The Wollemi Smart Palace</h3>
-      <div id="apartmentIframe2849466">
-        <script type="text/javascript" src="https://login.smoobu.com/js/Settings/BookingToolIframe.js"></script>
-        <script>BookingToolIframe.initialize({"url": "https://login.smoobu.com/en/booking-tool/iframe/695065/2849466", "baseUrl": "https://login.smoobu.com", "target": "#apartmentIframe2849466"})</script>
-      </div>
+      <h3 id="palace-booking-title">The Wollemi Smart Palace</h3>
+      <div id="apartmentIframe2849466" role="region" aria-labelledby="palace-booking-title" title="Booking widget for The Wollemi Smart Palace"></div>
+      <noscript>
+        <p>JavaScript is required to display the booking widget. You can book directly at <a href="https://login.smoobu.com/en/booking-tool/iframe/695065/2849466" target="_blank" rel="noopener">this link</a>.</p>
+      </noscript>
     </section>
-    <section style="background: url('static/images/5.jpg') center/cover no-repeat; background-blend-mode: multiply; background-color: rgba(255,255,255,0.18); min-width: 320px; min-height: 420px; max-width: 520px; margin-bottom: 2rem; border-radius: 1rem; box-shadow: 0 2px 12px rgba(0,0,0,0.12); padding: 1.5rem;">
-      <h3>The Smart Retreat</h3>
-      <div id="apartmentIframe1894487">
-        <script type="text/javascript" src="https://login.smoobu.com/js/Settings/BookingToolIframe.js"></script>
-        <script>BookingToolIframe.initialize({"url": "https://login.smoobu.com/en/booking-tool/iframe/695065/1894487", "baseUrl": "https://login.smoobu.com", "target": "#apartmentIframe1894487"})</script>
-      </div>
+  <section class="property property-bg-retreat property-card-compact">
+      <h3 id="retreat-booking-title">The Smart Retreat</h3>
+      <div id="apartmentIframe1894487" role="region" aria-labelledby="retreat-booking-title" title="Booking widget for The Smart Retreat"></div>
+      <noscript>
+        <p>JavaScript is required to display the booking widget. You can book directly at <a href="https://login.smoobu.com/en/booking-tool/iframe/695065/1894487" target="_blank" rel="noopener">this link</a>.</p>
+      </noscript>
     </section>
   </main>
+  <!-- Load Smoobu booking widget once and initialize both targets -->
+  <script src="https://login.smoobu.com/js/Settings/BookingToolIframe.js"></script>
+  <script>
+    (function() {
+      function initWhenReady() {
+        if (window.BookingToolIframe && typeof window.BookingToolIframe.initialize === 'function') {
+          try {
+            BookingToolIframe.initialize({
+              url: 'https://login.smoobu.com/en/booking-tool/iframe/695065/2849466',
+              baseUrl: 'https://login.smoobu.com',
+              target: '#apartmentIframe2849466'
+            });
+            BookingToolIframe.initialize({
+              url: 'https://login.smoobu.com/en/booking-tool/iframe/695065/1894487',
+              baseUrl: 'https://login.smoobu.com',
+              target: '#apartmentIframe1894487'
+            });
+          } catch (e) {
+            console.error('Booking widget init failed', e);
+          }
+        } else {
+          // Retry a few times if script hasn't loaded yet
+          setTimeout(initWhenReady, 150);
+        }
+      }
+      document.addEventListener('DOMContentLoaded', initWhenReady);
+    })();
+  </script>
 </body>
 </html>
